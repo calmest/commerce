@@ -14,8 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.welcome');
 });
+
+Route::get('/', 'PagesController@index');
+Route::get('/about', 'PagesController@about');
+Route::get('/blog', 'PagesController@blog');
+Route::get('/contact', 'PagesController@contact');
+
+Route::get('/marketing', 'PagesController@marketing');
+Route::get('/marketing/hairstyles', 'PagesController@hairstyles');
+Route::get('/marketing/hairstyles/natural-hair', 'PagesController@naturalhair');
+Route::get('/marketing/hairstyles/synthetic-hair', 'PagesController@synthetichair');
+Route::get('/marketing/hairstyles/coloured-hair', 'PagesController@colouredhair');
 
 //Route::get('/admin', 'AdminController@login');
 
