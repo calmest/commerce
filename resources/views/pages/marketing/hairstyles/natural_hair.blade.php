@@ -4,7 +4,7 @@
 
 
 
-<!--================Home Banner Area =================-->
+<!--================ Start Home Banner Area =================-->
     <section class="banner_area">
       <div class="banner_inner d-flex align-items-center">
         <div class="overlay"></div>
@@ -25,23 +25,15 @@
         </div>
       </div>
     </section>
-<!--================End Home Banner Area =================-->
+<!--================ End Home Banner Area =================-->
 
-<!--================Blog Area =================-->
+<!--================ Start Content Area =================-->
     <section class="blog_area section_gap">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
                     <div class="blog_right_sidebar">
-                        <aside class="single_sidebar_widget search_widget">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search Natural Hair">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button"><i class="ti-search"></i></button>
-                                </span>
-                            </div><!-- /input-group -->
-                            <div class="br"></div>
-                        </aside>
+
                         <aside class="single_sidebar_widget post_category_widget">
                                 <h4 class="widget_title">Natural hair</h4>
                                 <ul class="list cat-list">
@@ -107,23 +99,23 @@
                     </div>
                 </div>
                 <div class="col-lg-8">
-                        <div class="single-sidebar-widget blog_left_sidebar">
-                            <h4 class="widget_title">Straight Hair</h4>
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <img src="/img/blog/main-blog/m-blog-2.jpg" alt="">
-                                </div>
-
-                                <div class="col-lg-4">
-                                    <img src="/img/blog/main-blog/m-blog-2.jpg" alt="">
-                                </div>
+                    <div class="single-sidebar-widget blog_left_sidebar">
+                        <h4 class="widget_title">Straight Hair</h4>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <img src="/img/marketing/hairstyles/synthetic/synthetic.png" alt="">
                             </div>
 
+                            <div class="col-lg-6 col-md-6">
+                                <img src="/img/marketing/hairstyles/synthetic/synthetic.png" alt="">
+                            </div>
                         </div>
+
                     </div>
+                </div>
             </div>
         </div>
     </section>
-    <!--================Blog Area =================-->
+    <!--================ End Content Area =================-->
 
 @endsection ('content')

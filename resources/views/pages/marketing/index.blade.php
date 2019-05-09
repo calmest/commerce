@@ -8,9 +8,9 @@
         <div class="row justify-content-center">
           <div class="col-lg-5">
             <div class="main_title">
-              <h2 class="mb-3 text-white">Upcoming Events</h2>
-              <p>
-                Replenish man have thing gathering lights yielding shall you
+              <h2 class="mb-3 text-white">B-Styles Marketing</h2>
+              <p style="color: #ffffff;">
+                Checkout our marketing styles
               </p>
             </div>
           </div>
@@ -19,7 +19,7 @@
           <div class="col-lg-6 col-md-6">
             <div class="single_event position-relative">
               <div class="event_thumb">
-                <img src="img/event/e1.jpg" alt="" />
+                <img src="img/marketing/hairstyles.png" alt="" />
               </div>
               <div class="event_details">
                 <div class="d-flex mb-4">
@@ -45,7 +45,7 @@
           <div class="col-lg-6 col-md-6">
             <div class="single_event position-relative">
               <div class="event_thumb">
-                <img src="img/event/e2.jpg" alt="" />
+                <img src="img/marketing/clothstyles.png" alt="" />
               </div>
               <div class="event_details">
                 <div class="d-flex mb-4">
@@ -64,7 +64,7 @@
                   One make creepeth man for so bearing their firmament won't
                   fowl meat over seas great
                 </p>
-                <a href="#" class="primary-btn rounded-0 mt-3" style="font-size: 17px;">CLOTHE STYLES</a>
+                <a href="/marketing/clothstyles" class="primary-btn rounded-0 mt-3" style="font-size: 17px;">CLOTH STYLES</a>
               </div>
             </div>
           </div>
@@ -95,14 +95,14 @@
                         One make creepeth man for so bearing their firmament won't
                         fowl meat over seas great
                       </p>
-                      <a href="#" class="primary-btn rounded-0 mt-3" style="font-size: 20px;">MAKE-UPS</a>
+                      <a href="/marketing/make-ups" class="primary-btn rounded-0 mt-3" style="font-size: 20px;">MAKE-UPS</a>
                     </div>
                   </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                   <div class="single_event position-relative">
                     <div class="event_thumb">
-                      <img src="img/event/e2.jpg" alt="" />
+                      <img src="img/marketing/models.png" alt="" />
                     </div>
                     <div class="event_details">
                       <div class="d-flex mb-4">
@@ -121,7 +121,7 @@
                         One make creepeth man for so bearing their firmament won't
                         fowl meat over seas great
                       </p>
-                      <a href="#" class="primary-btn rounded-0 mt-3" style="font-size: 20px;">MODELS</a>
+                      <a href="/marketing/models" class="primary-btn rounded-0 mt-3" style="font-size: 20px;">MODELS</a>
                     </div>
                   </div>
                 </div>

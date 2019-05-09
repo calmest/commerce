@@ -24,6 +24,9 @@ Route::get('/contact', 'PagesController@contact');
 
 Route::get('/marketing', 'PagesController@marketing');
 Route::get('/marketing/hairstyles', 'PagesController@hairstyles');
+Route::get('/marketing/clothstyles', 'PagesController@clothstyles');
+Route::get('/marketing/make-ups', 'PagesController@makeups');
+Route::get('/marketing/models', 'PagesController@models');
 Route::get('/marketing/hairstyles/natural-hair', 'PagesController@naturalhair');
 Route::get('/marketing/hairstyles/synthetic-hair', 'PagesController@synthetichair');
 Route::get('/marketing/hairstyles/coloured-hair', 'PagesController@colouredhair');

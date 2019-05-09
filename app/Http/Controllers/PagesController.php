@@ -41,4 +41,16 @@ class PagesController extends Controller
     public function colouredhair(){
         return view('pages.marketing.hairstyles.coloured_hair');
     }
+
+    public function clothstyles(){
+        return view('pages.marketing.clothestyles.index');
+    }
+
+    public function makeups(){
+        return view('pages.marketing.makeups.index');
+    }
+
+    public function models(){
+        return view('pages.marketing.models.index');
+    }
 }
