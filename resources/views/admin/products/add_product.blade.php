@@ -46,7 +46,7 @@
                     <strong>{!! session('flash_message_success') !!}</strong>
             </div>
         @endif
-        <form class="form-horizontal" method="POST" action="{{ url('/admin/add-product') }}" novalidate="novalidate" id="add_Product" name="add_Product">
+        <form class="form-horizontal" method="POST" action="{{ url('/admin/add-product') }}" novalidate="novalidate" id="add_Product" name="add_Product" enctype='multipart/form-data'>
             {{ csrf_field() }}
             <div class="card-body">
                 <h4 class="card-title">Add Product</h4>

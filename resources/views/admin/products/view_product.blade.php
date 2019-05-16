@@ -8,13 +8,13 @@
 <div class="page-breadcrumb">
     <div class="row">
         <div class="col-12 d-flex no-block align-items-center">
-            <h4 class="page-title">Categories</h4>
+            <h4 class="page-title">Product</h4>
             <div class="ml-auto text-right">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
-                        <li class="breadcrumb-item">Categories</li>
-                        <li class="breadcrumb-item active" aria-current="page">View Categories</li>
+                        <li class="breadcrumb-item">Product</li>
+                        <li class="breadcrumb-item active" aria-current="page">View Product</li>
                     </ol>
                 </nav>
             </div>
@@ -51,45 +51,41 @@
                         <div class="card">
 
                             <div class="card-body">
-                                <h5 class="card-title">View Categories</h5>
+                                <h5 class="card-title">View Product</h5>
                                 <hr>
                                 <br>
                                 <div class="table-responsive">
                                     <table id="zero_config" class="table table-striped table-bordered">
                                         <thead>
                                             <tr>
-                                                <th><strong>Category ID</strong></th>
-                                                <th><strong>Category Name</strong></th>
-                                                <th><strong>Category Level</strong></th>
-                                                <th><strong>Category URL</strong></th>
+                                                <th><strong>Product ID</strong></th>
+                                                <th><strong>Product Name</strong></th>
+                                                <th><strong>Product Image</strong></th>
+                                                <th><strong>Product URL</strong></th>
+                                                <th><strong>Product Description</strong></th>
                                                 <th><strong>Actions</strong></th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($categories as $category)
+                                            @foreach ($product as $item)
                                             <tr>
-                                                <td>{{ $category->id }}</td>
-                                                <td>{{ $category->name }}</td>
-                                                <td>{{ $category->parent_id }}</td>
-                                                <td>{{ $category->url }}</td>
+                                                <td>{{ $item->id }}</td>
+                                                <td>{{ $item->product_name }}</td>
+                                                <td><img class="img-thumbnail" width="100px" height="100px" src="/storage/products/{{ $item->image }}" alt=""></td>
+                                                <td>{{ $item->url }}</td>
+                                                <td>{{ $item->description }}</td>
+
+
                                                 <td>
 
-                                                    <a href="{{ url('/admin/edit-category/'.$category->id) }}" class="btn btn-cyan btn-sm">Edit</a>
-                                                    <a id="delCat" href="{{ url('/admin/delete-category/'.$category->id) }}" class="btn btn-danger btn-sm">Delete</a>
+                                                    <a href="{{ url('/admin/edit-product/'.$item->id) }}" class="btn btn-cyan btn-sm">Edit</a>
+                                                    <a id="delCat" href="{{ url('/admin/delete-product/'.$item->id) }}" class="btn btn-danger btn-sm">Delete</a>
 
                                                 </td>
                                             </tr>
                                             @endforeach
                                         </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th><strong>Category ID</strong></th>
-                                                <th><strong>Category Name</strong></th>
-                                                <th><strong>Category Level</strong></th>
-                                                <th><strong>Category URL</strong></th>
-                                                <th><strong>Actions</strong></th>
-                                            </tr>
-                                        </tfoot>
+                                       
                                     </table>
                                 </div>
 

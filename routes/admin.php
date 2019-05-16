@@ -23,3 +23,7 @@ Route::match(['get','post'], '/delete-category/{id}', 'CategoryController@delete
 Route::get('/view-categories', 'CategoryController@viewCategories');
 // Products Section (Admin)
 Route::match(['get','post'], '/add-product', 'ProductsController@addProduct');
+Route::get('/view-products', 'ProductsController@viewProducts');
+Route::match(['get','post'], '/edit-product/{id}', 'ProductsController@editProduct');
+Route::match(['get','post'], '/delete-product/{id}', 'ProductsController@deleteProduct');
+

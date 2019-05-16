@@ -34,8 +34,8 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/user') }}">
-                    {{ config('app.name', 'Laravel Multi Auth Guard') }}: User
+                <a class="navbar-brand" href="{{ url('/admin') }}">
+                    {{ config('app.name', 'Laravel Multi Auth Guard') }}: Admin
                 </a>
             </div>
 
@@ -49,8 +49,8 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/user/login') }}">Login</a></li>
-                        <li><a href="{{ url('/user/register') }}">Register</a></li>
+                        <li><a href="{{ url('/admin/login') }}">Login</a></li>
+                        <li><a href="{{ url('/admin/register') }}">Register</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -59,13 +59,13 @@
 
                             <ul class="dropdown-menu" role="menu">
                                 <li>
-                                    <a href="{{ url('/user/logout') }}"
+                                    <a href="{{ url('/admin/logout') }}"
                                         onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
                                         Logout
                                     </a>
 
-                                    <form id="logout-form" action="{{ url('/user/logout') }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ url('/admin/logout') }}" method="POST" style="display: none;">
                                         {{ csrf_field() }}
                                     </form>
                                 </li>

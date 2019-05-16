@@ -109,7 +109,7 @@
 
   @yield('footer')
 
-
+>
 
 </body>
 </html>
