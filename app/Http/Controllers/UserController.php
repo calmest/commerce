@@ -12,23 +12,41 @@ class UserController extends Controller
 
     public function dashboard(){
         
-        return view('admin.dashboard');
+        return view('user.dashboard');
     }
-
     public function settings(){
-        return view('admin.settings');
+        return view('user.settings');
     }
 
     public function chkPassword(Request $request){
         $data = $request->all();
+        $user = Auth::user()->id;
         $current_password = $data['current_pwd'];
-        $check_password = User::where(['admin' => '1'])->first();
+        $check_password = User::where('id', '=',$user)->first();
         if(Hash::check($current_password, $check_password->password)){
             echo "true"; die;
         }else {
             echo "false"; die;
         }
     }
+
+    public function updatePassword(Request $request){
+        if($request->isMethod('post')){
+            $data = $request->all();
+            //echo "<pre>"; print_r($data); die;
+            $check_password = User::where(['email' => Auth::user()->email])->first();
+            $current_password = $data['current_pwd'];
+            if(Hash::check($current_password, $check_password->password)){
+                $password = bcrypt($data['new_pwd']);
+                $user = Auth::user()->id;
+                User::where('id', '=', $user)->update(['password'=>$password]);
+                return redirect('/user/settings')->with('flash_message_success','Password updated Successfully!');
+            }else {
+                return redirect('/user/settings')->with('flash_message_error','Password failed to Update!');
+            }
+        }
+    }
+
         //
         public function addProduct(Request $request){
             if($request->isMethod('post')){
@@ -52,7 +70,7 @@ class UserController extends Controller
     
     
                 
-               
+
             }
     
             
