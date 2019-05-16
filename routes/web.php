@@ -1,6 +1,5 @@
 <?php
-use App\Http\Controllers\AdminController;
-use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,15 +12,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.welcome');
-});
 
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/blog', 'PagesController@blog');
 Route::get('/contact', 'PagesController@contact');
-
 Route::get('/marketing', 'PagesController@marketing');
 Route::get('/marketing/hairstyles', 'PagesController@hairstyles');
 Route::get('/marketing/clothstyles', 'PagesController@clothstyles');
@@ -30,33 +25,34 @@ Route::get('/marketing/models', 'PagesController@models');
 Route::get('/marketing/hairstyles/natural-hair', 'PagesController@naturalhair');
 Route::get('/marketing/hairstyles/synthetic-hair', 'PagesController@synthetichair');
 Route::get('/marketing/hairstyles/coloured-hair', 'PagesController@colouredhair');
-
-//Route::get('/admin', 'AdminController@login');
-
-Route::match(['get', 'post'], '/admin', 'AdminController@login');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware' => ['auth']], function(){
-    Route::get('/admin/dashboard', 'AdminController@dashboard');
-    Route::get('/admin/settings', 'AdminController@settings');
-    Route::get('/admin/check-pwd', 'AdminController@chkPassword');
-    Route::match(['get', 'post'], '/admin/update-pwd', 'AdminController@updatePassword');
+Route::group(['prefix' => 'admin'], function () {
+  Route::get('/login', 'AdminAuth\LoginController@showLoginForm')->name('login');
+  Route::post('/login', 'AdminAuth\LoginController@login');
+  Route::post('/logout', 'AdminAuth\LoginController@logout')->name('logout');
 
-    // Categories Section (Admin)
-    Route::match(['get','post'], '/admin/add-category', 'CategoryController@addCategory');
-    Route::match(['get','post'], '/admin/edit-category/{id}', 'CategoryController@editCategory');
-    Route::match(['get','post'], '/admin/delete-category/{id}', 'CategoryController@deleteCategory');
-    Route::get('/admin/view-categories', 'CategoryController@viewCategories');
+  Route::get('/register', 'AdminAuth\RegisterController@showRegistrationForm')->name('register');
+  Route::post('/register', 'AdminAuth\RegisterController@register');
 
-    // Products Section (Admin)
-    Route::match(['get','post'], '/admin/add-product', 'ProductsController@addProduct');
+  Route::post('/password/email', 'AdminAuth\ForgotPasswordController@sendResetLinkEmail')->name('password.request');
+  Route::post('/password/reset', 'AdminAuth\ResetPasswordController@reset')->name('password.email');
+  Route::get('/password/reset', 'AdminAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
+  Route::get('/password/reset/{token}', 'AdminAuth\ResetPasswordController@showResetForm');
 });
 
-//Route::get('/admin/dashboard', 'AdminController@dashboard');
+Route::group(['prefix' => 'user'], function () {
+  Route::get('/login', 'UserAuth\LoginController@showLoginForm')->name('login');
+  Route::post('/login', 'UserAuth\LoginController@login');
+  Route::post('/logout', 'UserAuth\LoginController@logout')->name('logout');
 
-Route::get('/logout', 'AdminController@logout');
+  Route::get('/register', 'UserAuth\RegisterController@showRegistrationForm')->name('register');
+  Route::post('/register', 'UserAuth\RegisterController@register');
 
-
+  Route::post('/password/email', 'UserAuth\ForgotPasswordController@sendResetLinkEmail')->name('password.request');
+  Route::post('/password/reset', 'UserAuth\ResetPasswordController@reset')->name('password.email');
+  Route::get('/password/reset', 'UserAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
+  Route::get('/password/reset/{token}', 'UserAuth\ResetPasswordController@showResetForm');
+});
