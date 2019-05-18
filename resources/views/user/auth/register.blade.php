@@ -52,43 +52,60 @@
                     <!-- Form -->
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/user/register') }}">
                         {{ csrf_field() }}
-                        <div class="row p-b-30">
-                            <div class="col-12">
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text bg-success text-white" id="basic-addon1"><i class="ti-user"></i></span>
-                                    </div>
-                                    <input type="text" class="form-control form-control-lg" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" required>
-                                </div>
-                                <!-- email -->
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text bg-danger text-white" id="basic-addon1"><i class="ti-email"></i></span>
-                                    </div>
-                                    <input type="text" class="form-control form-control-lg" placeholder="Email Address" aria-label="Username" aria-describedby="basic-addon1" required>
-                                </div>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text bg-warning text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
-                                    </div>
-                                    <input type="text" class="form-control form-control-lg" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required>
-                                </div>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text bg-info text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
-                                    </div>
-                                    <input type="text" class="form-control form-control-lg" placeholder=" Confirm Password" aria-label="Password" aria-describedby="basic-addon1" required>
-                                </div>
-                            </div>
+    
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <label for="name" >Name</label>
+    
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" autofocus>
+    
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
                         </div>
-                        <div class="row border-top border-secondary">
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <div class="p-t-20">
-                                        <button class="btn btn-block btn-lg btn-info" type="submit">Sign Up</button>
-                                    </div>
-                                </div>
-                            </div>
+    
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label for="email" >E-Mail Address</label>
+    
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
+    
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                        </div>
+    
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label for="password" >Password</label>
+    
+                                <input id="password" type="password" class="form-control" name="password">
+    
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                        </div>
+    
+                        <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                            <label for="password-confirm" >Confirm Password</label>
+    
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
+    
+                                @if ($errors->has('password_confirmation'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                    </span>
+                                @endif
+                        </div>
+    
+                        <div class="form-group">
+                           
+                                <button type="submit" class="btn btn-warning btn-block">
+                                    Register
+                                </button>
                         </div>
                     </form>
                 </div>

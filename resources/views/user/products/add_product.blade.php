@@ -77,6 +77,16 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label class="col-md-3">Video Upload</label>
+                    <div class="col-md-9">
+                        <div class="custom-file">
+                            <input type="file" name="video" class="custom-file-input" id="validatedCustomFile" required>
+                            <label class="custom-file-label" for="validatedCustomFile">Choose Video...</label>
+                            <div class="invalid-feedback">Example invalid custom file feedback</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label class="col-md-3 m-t-15">Select Category</label>
                     <div class="col-md-9">
                         <select class="select2 form-control custom-select" style="width: 100%; height:36px;" name="category_id">

@@ -61,6 +61,7 @@
                                                 <th><strong>Product ID</strong></th>
                                                 <th><strong>Product Name</strong></th>
                                                 <th><strong>Product Image</strong></th>
+                                                <th><strong>Product Video</strong></th>
                                                 <th><strong>Product URL</strong></th>
                                                 <th><strong>Product Description</strong></th>
                                                 <th><strong>Actions</strong></th>
@@ -72,6 +73,15 @@
                                                 <td>{{ $item->id }}</td>
                                                 <td>{{ $item->product_name }}</td>
                                                 <td><img class="img-thumbnail" width="100px" height="100px" src="/storage/products/{{ $item->image }}" alt=""></td>
+                                                <td>
+                                                    {{-- <video class="img-thumbnail" width="100px" height="100px" src="/storage/products/{{ $item->video }}" alt=""></video> --}}
+                                                    <video controls autoplay width="250px" height="250px" >
+                                                            <source src="/storage/products/{{ $item->video }}" type="video/mp4">
+                                                            <source src="/storage/products/{{ $item->video }}" type="video/ogg">
+                                                            Your browser does not support the video tag.
+                                                          </video>
+                                                </td>
+                                                
                                                 <td>{{ $item->url }}</td>
                                                 <td>{{ $item->description }}</td>
 

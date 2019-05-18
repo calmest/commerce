@@ -28,6 +28,7 @@ class UserController extends Controller
         }else {
             echo "false"; die;
         }
+        
     }
 
     public function updatePassword(Request $request){
@@ -58,12 +59,17 @@ class UserController extends Controller
                 $avatar = $data['avatar'];
                 $filename = time(). '.' . $avatar->getClientOriginalExtension();
                 $avatar->move('storage/products', $filename);
+
+                $video = $data['video'];
+                $videofile = time(). '.' . $video->getClientOriginalExtension();
+                $video->move('storage/products', $videofile);
                     
                 $product = new Product;
                 $product->category_id = $data['category_id'];
                 $product->product_name = $data['product_name'];
                 $product->url = $data['url'];
                 $product->image = $filename;
+                $product->video = $videofile;
                 $product->description = $data['description'];
                 $product->save();
                 return redirect('/user/add-product')->with('flash_message_success', 'Product added Successfully!');

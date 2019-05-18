@@ -11,7 +11,7 @@ class ProductsController extends Controller
     //
     public function addProduct(Request $request){
         if($request->isMethod('post')){
-            $data = $request->all();
+            // $data = $request->all();
             // return $data;
             // echo "<pre>"; print_r($data); die;
 
@@ -19,12 +19,17 @@ class ProductsController extends Controller
             $avatar = $data['avatar'];
             $filename = time(). '.' . $avatar->getClientOriginalExtension();
             $avatar->move('storage/products', $filename);
+
+            $video = $data['video'];
+            $videofile = time(). '.' . $video->getClientOriginalExtension();
+            $video->move('storage/products', $videofile);
                 
             $product = new Product;
             $product->category_id = $data['category_id'];
             $product->product_name = $data['product_name'];
             $product->url = $data['url'];
             $product->image = $filename;
+            $product->video = $videofile;
             $product->description = $data['description'];
             $product->save();
             return redirect('/admin/view-products')->with('flash_message_success', 'Product added Successfully!');
