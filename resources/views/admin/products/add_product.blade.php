@@ -1,4 +1,4 @@
-@extends('layouts.adminLayout.admin_design')
+@extends('admin.layout.admin_design')
 
 @section('content')
 
@@ -46,7 +46,7 @@
                     <strong>{!! session('flash_message_success') !!}</strong>
             </div>
         @endif
-        <form class="form-horizontal" method="POST" action="{{ url('/admin/add-product') }}" novalidate="novalidate" id="add_Product" name="add_Product">
+        <form class="form-horizontal" method="POST" action="{{ url('/admin/add-product') }}" novalidate="novalidate" id="add_Product" name="add_Product" enctype='multipart/form-data'>
             {{ csrf_field() }}
             <div class="card-body">
                 <h4 class="card-title">Add Product</h4>
@@ -70,8 +70,18 @@
                     <label class="col-md-3">Image Upload</label>
                     <div class="col-md-9">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+                            <input type="file" name="avatar" class="custom-file-input" id="validatedCustomFile" required>
                             <label class="custom-file-label" for="validatedCustomFile">Choose image...</label>
+                            <div class="invalid-feedback">Example invalid custom file feedback</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-3">Video Upload</label>
+                    <div class="col-md-9">
+                        <div class="custom-file">
+                            <input type="file" name="video" class="custom-file-input" id="validatedCustomFile" required>
+                            <label class="custom-file-label" for="validatedCustomFile">Choose Video...</label>
                             <div class="invalid-feedback">Example invalid custom file feedback</div>
                         </div>
                     </div>
@@ -81,10 +91,11 @@
                     <div class="col-md-9">
                         <select class="select2 form-control custom-select" style="width: 100%; height:36px;" name="category_id">
                             <option>Select</option>
-                            <optgroup label="Main/Sub Categories">
-                                <option value="AK">Alaska</option>
-                                <option value="HI">Hawaii</option>
-                            </optgroup>
+
+                            @foreach ($category as $item)
+                             <option value="{{$item->id}}">{{$item->name}}</option>
+                            @endforeach
+                            
                         </select>
                     </div>
                 </div>
