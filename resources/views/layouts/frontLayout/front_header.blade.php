@@ -23,8 +23,8 @@
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <a class="navbar-brand logo_h" href="index.html"
-              ><img src="img/logo.png" alt=""
+            <a class="navbar-brand logo_h" href="/"
+              ><img src="/img/logo.png" alt=""
             /></a>
             <button
               class="navbar-toggler"

@@ -38,7 +38,7 @@
                                 <h4 class="widget_title">Natural hair</h4>
                                 <ul class="list cat-list">
                                     <li>
-                                        <a href="#" class="d-flex justify-content-between">
+                                        <a href="#" class="d-flex justify-content-between active">
                                             <p>Straight Hair</p>
                                             <p>37</p>
                                         </a>
