@@ -10,11 +10,16 @@
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/user/dashboard') }}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/user/settings" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Settings</span></a></li>
                
-                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Products </span></a>
-                    <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item"><a href="{{ url('/user/add-product') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Product </span></a></li>
-                    </ul>
-                </li>
+            </li>
+            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Products </span></a>
+                <ul aria-expanded="false" class="collapse  first-level">
+                    <li class="sidebar-item"><a href="{{ url('/user/add-product') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Product </span></a></li>
+                    <li class="sidebar-item"><a href="{{ url('/user/add-file') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Product Image/Video </span></a></li>
+                    <li class="sidebar-item"><a href="{{ url('/user/view-products') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> View Products </span></a></li>
+                </ul>
+            </li>
+          <li class="sidebar-item"><a href="{{ url('/user/view-files') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Images / Videos </span></a></li>
+              
                 
             </ul>
         </nav>

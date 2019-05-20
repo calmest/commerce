@@ -12,7 +12,7 @@
             <div class="ml-auto text-right">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/user/dashboard">Home</a></li>
                         <li class="breadcrumb-item">Product</li>
                         <li class="breadcrumb-item active" aria-current="page">View Product</li>
                     </ol>
@@ -60,7 +60,6 @@
                                             <tr>
                                                 <th><strong>Product ID</strong></th>
                                                 <th><strong>Product Name</strong></th>
-                                                <th><strong>Product Image</strong></th>
                                                 <th><strong>Product URL</strong></th>
                                                 <th><strong>Product Description</strong></th>
                                                 <th><strong>Actions</strong></th>
@@ -71,15 +70,14 @@
                                             <tr>
                                                 <td>{{ $item->id }}</td>
                                                 <td>{{ $item->product_name }}</td>
-                                                <td><img class="img-thumbnail" width="100px" height="100px" src="/storage/products/{{ $item->image }}" alt=""></td>
                                                 <td>{{ $item->url }}</td>
                                                 <td>{{ $item->description }}</td>
 
 
                                                 <td>
 
-                                                    <a href="{{ url('/admin/edit-product/'.$item->id) }}" class="btn btn-cyan btn-sm">Edit</a>
-                                                    <a id="delCat" href="{{ url('/admin/delete-product/'.$item->id) }}" class="btn btn-danger btn-sm">Delete</a>
+                                                    <a href="{{ url('/user/edit-product/'.$item->id) }}" class="btn btn-cyan btn-sm">Edit</a>
+                                                    <a id="delCat" href="{{ url('/user/delete-product/'.$item->id) }}" class="btn btn-danger btn-sm">Delete</a>
 
                                                 </td>
                                             </tr>

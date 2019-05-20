@@ -66,26 +66,7 @@
                         <input type="text" class="form-control" id="url" name="url" placeholder="URL">
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label class="col-md-3">Image Upload</label>
-                    <div class="col-md-9">
-                        <div class="custom-file">
-                            <input type="file" name="avatar" class="custom-file-input" id="validatedCustomFile" required>
-                            <label class="custom-file-label" for="validatedCustomFile">Choose image...</label>
-                            <div class="invalid-feedback">Example invalid custom file feedback</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-md-3">Video Upload</label>
-                    <div class="col-md-9">
-                        <div class="custom-file">
-                            <input type="file" name="video" class="custom-file-input" id="validatedCustomFile" required>
-                            <label class="custom-file-label" for="validatedCustomFile">Choose Video...</label>
-                            <div class="invalid-feedback">Example invalid custom file feedback</div>
-                        </div>
-                    </div>
-                </div>
+     
                 <div class="form-group row">
                     <label class="col-md-3 m-t-15">Select Category</label>
                     <div class="col-md-9">
