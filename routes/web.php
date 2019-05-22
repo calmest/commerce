@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Routing\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +25,9 @@ Route::get('/marketing/models', 'PagesController@models');
 Route::get('/marketing/hairstyles/natural-hair', 'PagesController@naturalhair');
 Route::get('/marketing/hairstyles/synthetic-hair', 'PagesController@synthetichair');
 Route::get('/marketing/hairstyles/coloured-hair', 'PagesController@colouredhair');
+
+Route::get('/subscribe', 'SubscriptionController@index');
+Route::post('/subscribe', 'SubscriptionController@store');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
