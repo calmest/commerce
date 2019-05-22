@@ -12,7 +12,7 @@
             <div class="ml-auto text-right">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/user/dashboard">Home</a></li>
                         <li class="breadcrumb-item">Product</li>
                         <li class="breadcrumb-item active" aria-current="page">Edit Product</li>
                     </ol>
@@ -46,7 +46,7 @@
                     <strong>{!! session('flash_message_success') !!}</strong>
             </div>
         @endif
-        <form class="form-horizontal" method="POST" action="{{ url('/admin/edit-product/'.$productDetails->id) }}" novalidate="novalidate" id="add_category" name="add_category">
+        <form class="form-horizontal" method="POST" action="{{ url('/user/edit-product/'.$productDetails->id) }}" novalidate="novalidate" id="add_category" name="add_category">
             {{ csrf_field() }}
             <div class="card-body">
                 <h4 class="card-title">Edit Category</h4>

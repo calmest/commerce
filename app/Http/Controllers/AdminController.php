@@ -51,4 +51,32 @@ class AdminController extends Controller
         Session::flush();
         return redirect('/admin')->with('flash_message_success', 'Logged out successfully');
     }
+
+    public function Users()
+    {
+
+        $users = User::all();
+        return view('admin/clients/manageuser',compact('users'));
+        # code...
+    }
+
+    public function editUser(Request $request, $id = null){
+        if($request->isMethod('post')){
+            $data = $request->all();
+            User::where(['id'=>$id])->update(['name'=>$data['name'], 'email'=>$data['email'], 'password'=>$data['password']]);
+            return redirect('/admin/manage-users')->with('flash_message_success', 'User updated Successfully!');
+        }
+        $UserDetails = User::where('id', $id)->first();
+        // $levels = User::where(['parent_id'=>0])->get();
+
+        return view('admin.clients.edit_User')->with(compact('UserDetails'));
+    }
+
+    public function deleteUser($id = null){
+        if (!empty($id)){
+            User::where(['id'=>$id])->delete();
+            return redirect()->back()->with('flash_message_success', 'User deleted Successfully!');
+        }
+    }
+
 }

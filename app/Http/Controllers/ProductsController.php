@@ -2,41 +2,38 @@
 
 namespace App\Http\Controllers;
 
+
+use Auth;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
+use App\Image;
+use App\Video;
 
 class ProductsController extends Controller
 {
     //
     public function addProduct(Request $request){
         if($request->isMethod('post')){
-            // $data = $request->all();
-            // return $data;
-            // echo "<pre>"; print_r($data); die;
+          $data = $request;
+            // $avatar = $data['avatar'];
+            // $filename = time(). '.' . $avatar->getClientOriginalExtension();
+            // $avatar->move('storage/products', $filename);
 
-        
-            $avatar = $data['avatar'];
-            $filename = time(). '.' . $avatar->getClientOriginalExtension();
-            $avatar->move('storage/products', $filename);
-
-            $video = $data['video'];
-            $videofile = time(). '.' . $video->getClientOriginalExtension();
-            $video->move('storage/products', $videofile);
+            // $video = $data['video'];
+            // $videofile = time(). '.' . $video->getClientOriginalExtension();
+            // $video->move('storage/products', $videofile);
                 
             $product = new Product;
+            $product->user_id = Auth::user()->id;
+
             $product->category_id = $data['category_id'];
             $product->product_name = $data['product_name'];
             $product->url = $data['url'];
-            $product->image = $filename;
-            $product->video = $videofile;
             $product->description = $data['description'];
             $product->save();
             return redirect('/admin/view-products')->with('flash_message_success', 'Product added Successfully!');
 
-
-            
-           
         }
 
         
@@ -44,9 +41,34 @@ class ProductsController extends Controller
         return view('admin.products.add_product',compact('category'));
     }
 
+   
+    public function addFile()
+    {
+
+        $products = Product::all();
+        return view('admin.products.add_file',compact('products'));
+        # code...
+    }
+
+    public function viewFiles()
+    {
+
+        $images = Image::with('Products')->get();
+        $videos = Video::with('Products')->get();
+
+            // return $images;
+
+        return view('admin.products.view_files',compact('images','videos'));
+      
+    }
+
+    
+
+
     public function viewProducts(){
         //echo "test"; die;
-        $product = Product::get();
+        $product = Product::with('Images','Videos')->get();
+        // return $product;
         //$categories = json_decode(json_encode($categories));
         //echo "<pre>"; print_r($categories); die;
         return view('admin.products.view_product')->with(compact('product'));

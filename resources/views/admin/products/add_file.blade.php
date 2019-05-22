@@ -1,4 +1,5 @@
-@extends('user.layout.admin_design')
+
+@extends('admin.layout.admin_design')
 
 @section('content')
 
@@ -8,12 +9,12 @@
 <div class="page-breadcrumb">
     <div class="row">
         <div class="col-12 d-flex no-block align-items-center">
-            <h4 class="page-title">Products</h4>
+            <h4 class="page-title">Users</h4>
             <div class="ml-auto text-right">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/user/dashboard">Home</a></li>
-                        <li class="breadcrumb-item">Products</li>
+                        <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
+                        <li class="breadcrumb-item">Users</li>
                         <li class="breadcrumb-item active" aria-current="page">Add Product</li>
                     </ol>
                 </nav>
@@ -46,40 +47,41 @@
                     <strong>{!! session('flash_message_success') !!}</strong>
             </div>
         @endif
-        <form class="form-horizontal" method="POST" action="{{ url('/user/add-product') }}" novalidate="novalidate" id="add_Product" name="add_Product" enctype='multipart/form-data'>
+        <form class="form-horizontal" method="POST" action="{{ url('/admin/add-image') }}" novalidate="novalidate" id="add_Product" name="add_Product" enctype='multipart/form-data'>
             {{ csrf_field() }}
             <div class="card-body">
-                <h4 class="card-title">Add Product</h4>
+                <h4 class="card-title">Add Image</h4>
                 <hr>
                 <br>
+                
+                
                 <div class="form-group row">
-                    <label for="name" class="col-lg-3 col-md-3 col-sm-3 control-label col-form-label">Product Name</label>
-                    <div class="col-lg-9 col-md-9 col-sm-9">
-                        <input type="text" class="form-control" id="product_name" name="product_name" placeholder="Product Name">
-                        <span id="chkPwd"></span>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label for="url" class="col-lg-3 col-md-3 col-sm-3 control-label col-form-label">URL</label>
-                    <div class="col-lg-9 col-md-9 col-sm-9">
-                        <input type="text" class="form-control" id="url" name="url" placeholder="URL">
-                    </div>
-                </div>
-     
-                <div class="form-group row">
-                    <label class="col-md-3 m-t-15">Select Category</label>
+                    <label class="col-md-3 m-t-15">Select Product</label>
                     <div class="col-md-9">
-                        <select class="select2 form-control custom-select" style="width: 100%; height:36px;" name="category_id">
+                        <select class="select2 form-control custom-select" style="width: 100%; height:36px;" name="product_id">
                             <option>Select</option>
 
-                            @foreach ($category as $item)
-                             <option value="{{$item->id}}">{{$item->name}}</option>
+                            @foreach ($products as $item)
+                             <option value="{{$item->id}}">{{$item->product_name}}</option>
                             @endforeach
                             
                         </select>
                     </div>
                 </div>
+
+                <div class="form-group row">
+                        <label class="col-md-3">Image Upload</label>
+                        <div class="col-md-9">
+                            <div class="custom-file">
+                                <input type="file" name="avatar" class="custom-file-input" id="validatedCustomFile" required>
+                                <label class="custom-file-label" for="validatedCustomFile">Choose image...</label>
+                                <div class="invalid-feedback">Example invalid custom file feedback</div>
+                            </div>
+                        </div>
+                    </div>
+                   
+
+
                 <div class="form-group row">
                     <label for="description" class="col-lg-3 col-md-3 col-sm-3 control-label col-form-label">Description</label>
                     <div class="col-lg-9 col-md-9 col-sm-9">
@@ -89,7 +91,56 @@
             </div>
             <div class="border-top">
                 <div class="card-body">
-                        <input type="submit" value="Add Product" class="btn btn-success">
+                        <input type="submit" value="Add Image" class="btn btn-success">
+                </div>
+            </div>
+        </form>
+
+        <form class="form-horizontal" method="POST" action="{{ url('/admin/add-video') }}" novalidate="novalidate" id="add_Product" name="add_Product" enctype='multipart/form-data'>
+            {{ csrf_field() }}
+            <div class="card-body">
+                <h4 class="card-title">Add Video</h4>
+                <hr>
+                <br>
+                
+                
+                <div class="form-group row">
+                    <label class="col-md-3 m-t-15">Select Product</label>
+                    <div class="col-md-9">
+                        <select class="select2 form-control custom-select" style="width: 100%; height:36px;" name="product_id">
+                            <option>Select</option>
+
+                            @foreach ($products as $item)
+                             <option value="{{$item->id}}">{{$item->product_name}}</option>
+                            @endforeach
+                            
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                        <label class="col-md-3">Video Upload</label>
+                        <div class="col-md-9">
+                            <div class="custom-file">
+                                <input type="file" name="video" class="custom-file-input" id="validatedCustomFile" required>
+                                <label class="custom-file-label" for="validatedCustomFile">Choose Video...</label>
+                                <div class="invalid-feedback">Example invalid custom file feedback</div>
+                            </div>
+                        </div>
+                    </div>
+                   
+
+
+                <div class="form-group row">
+                    <label for="description" class="col-lg-3 col-md-3 col-sm-3 control-label col-form-label">Description</label>
+                    <div class="col-lg-9 col-md-9 col-sm-9">
+                        <textarea type="text" class="form-control" id="description" name="description" placeholder="Description" rows="5"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="border-top">
+                <div class="card-body">
+                        <input type="submit" value="Add Video" class="btn btn-success">
                 </div>
             </div>
         </form>
