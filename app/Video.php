@@ -3,12 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Product;
+use App\Category;
 
 class Video extends Model
 {
-    public function Products()
+    public function Category()
     {
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo(Category::class);
     }
 }

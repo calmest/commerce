@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Category;
+use App\Image;
+use App\User;
+use App\Video;
 use Auth;
-use Session;
-use App\User; //this is to add User model
-use Illuminate\Support\Facades\Hash; //this is to check Hash Password
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Session; //this is to check Hash Password
 
 class AdminController extends Controller
 {
@@ -78,5 +81,43 @@ class AdminController extends Controller
             return redirect()->back()->with('flash_message_success', 'User deleted Successfully!');
         }
     }
+
+    public function addImage()
+    {
+
+        $category = Category::all();
+        return view('admin.images.add_image', compact('category'));
+    # code...
+    }    
+
+    public function addVideo()
+    {
+
+        $category = Category::all();
+        return view('admin.videos.add_video', compact('category'));
+    # code...
+    }
+
+    public function ManageImages()
+    {
+        // $id = Auth::user()->id;
+        $images = Image::all();
+      
+
+        return view('admin.images.manage_images', compact('images'));
+
+    }   
+
+    public function ManageVideos()
+    {
+        // $id = Auth::user()->id;
+        $videos = Video::all();
+      
+
+        return view('admin.videos.manage_videos', compact('videos'));
+
+    }
+
+
 
 }

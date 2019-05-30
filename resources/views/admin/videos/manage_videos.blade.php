@@ -8,13 +8,13 @@
 <div class="page-breadcrumb">
     <div class="row">
         <div class="col-12 d-flex no-block align-items-center">
-            <h4 class="page-title">Product</h4>
+            <h4 class="page-title">Manage Videos</h4>
             <div class="ml-auto text-right">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
-                        <li class="breadcrumb-item">Product</li>
-                        <li class="breadcrumb-item active" aria-current="page">View Product</li>
+                        <li class="breadcrumb-item">Videos</li>
+                        <li class="breadcrumb-item active" aria-current="page">View Videos</li>
                     </ol>
                 </nav>
             </div>
@@ -51,33 +51,34 @@
                         <div class="card">
 
                             <div class="card-body">
-                                <h5 class="card-title">View Product</h5>
+                                <h5 class="card-title">Manage Videos</h5>
                                 <hr>
                                 <br>
                                 <div class="table-responsive">
                                     <table id="zero_config" class="table table-striped table-bordered">
                                         <thead>
                                             <tr>
-                                                <th><strong>Product ID</strong></th>
-                                                <th><strong>Product Name</strong></th>
-                                                <th><strong>Product URL</strong></th>
-                                                <th><strong>Product Description</strong></th>
+                                                <th><strong>video ID</strong></th>
+                                                <th><strong>video Name</strong></th>
+                                                <th><strong>video</strong></th>
+                                                <th><strong>video Description</strong></th>
                                                 <th><strong>Actions</strong></th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($product as $item)
+                                            @foreach ($videos as $item)
                                             <tr>
                                                 <td>{{ $item->id }}</td>
-                                                <td>{{ $item->product_name }}</td>
-                                                <td>{{ $item->url }}</td>
+                                                <td>{{ $item->video_title }}</td>
+                                                <td><img src="{{ $item->video }}" width="100px" height="100px" alt=""></td>
                                                 <td>{{ $item->description }}</td>
 
 
                                                 <td>
 
-                                                    <a href="{{ url('/admin/edit-product/'.$item->id) }}" class="btn btn-cyan btn-sm">Edit</a>
-                                                    <a id="delCat" href="{{ url('/admin/delete-product/'.$item->id) }}" class="btn btn-danger btn-sm">Delete</a>
+                                                    <a href="{{ url('/admin/edit-video/'.$item->id) }}" class="btn btn-cyan btn-sm">Edit</a>
+                                                    <br>
+                                                    <a id="delCat" href="{{ url('/admin/delete-video/'.$item->id) }}" class="btn btn-danger btn-sm">Delete</a>
 
                                                 </td>
                                             </tr>

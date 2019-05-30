@@ -25,10 +25,21 @@ Route::get('/view-categories', 'CategoryController@viewCategories');
 Route::match(['get','post'], '/add-product', 'ProductsController@addProduct');
 Route::get('/add-file', 'ProductsController@addFile');
 
-// add image
 
+Route::get('/image', 'AdminController@addImage');
 Route::post('/add-image', 'ImageController@Upload');
+Route::get('/view-images', 'AdminController@ManageImages');
+Route::match(['get','post'], '/edit-image/{id}', 'ImageController@update');
+Route::match(['get','post'], '/delete-image/{id}', 'ImageController@delete');
+
+
+// add video
+Route::get('/video', 'AdminController@addVideo');
 Route::post('/add-video', 'VideoController@Upload');
+Route::get('/view-videos', 'AdminController@ManageVideos');
+Route::match(['get','post'], '/edit-video/{id}', 'VideoController@update');
+Route::match(['get','post'], '/delete-video/{id}', 'VideoController@delete');
+;
 
 
 

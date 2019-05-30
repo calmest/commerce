@@ -90,35 +90,48 @@ class UserController extends Controller
         return view('user.products.add_product', compact('category'));
     }
 
-    public function addFile()
+    public function addImage()
     {
 
-        $products = Product::all();
-        return view('user.products.add_file', compact('products'));
+        $category = Category::all();
+        return view('user.images.add_image', compact('category'));
+    # code...
+    }    
+
+    public function addVideo()
+    {
+
+        $category = Category::all();
+        return view('user.videos.add_video', compact('category'));
     # code...
     }
 
     public function viewProducts()
     {
-        //echo "test"; die;
+      
         $id = Auth::user()->id;
         $product = Product::where('user_id', '=', $id)->with('Images', 'Videos')->get();
-        // return $product;
-        //$categories = json_decode(json_encode($categories));
-        //echo "<pre>"; print_r($categories); die;
         return view('user.products.view_product')->with(compact('product'));
     }
 
 
-    public function viewFiles()
+    public function ManageImages()
     {
         $id = Auth::user()->id;
-        $images = Image::where('user_id', '=', $id)->with('Products')->get();
-        $videos = Video::where('user_id', '=', $id)->with('Products')->get();
+        $images = Image::where('user_id', '=', $id)->with('Category')->get();
+      
 
-        // return $images;
+        return view('user.images.manage_images', compact('images'));
 
-        return view('user.products.view_files', compact('images', 'videos'));
+    }   
+
+    public function ManageVideos()
+    {
+        $id = Auth::user()->id;
+        $videos = Video::where('user_id', '=', $id)->with('Category')->get();
+      
+
+        return view('user.videos.manage_videos', compact('videos'));
 
     }
 
