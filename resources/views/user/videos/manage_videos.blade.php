@@ -70,7 +70,14 @@
                                             <tr>
                                                 <td>{{ $item->id }}</td>
                                                 <td>{{ $item->video_title }}</td>
-                                                <td><img src="{{ $item->video }}" width="100px" height="100px" alt=""></td>
+                                                <td>
+                                                    <video controls autoplay>
+                                                        <source src="{{ $item->video }}" width="100px" height="100px" type="video/mp4">
+                                                     
+                                                        Your browser does not support the video tag.
+                                                    </video>
+                                                  
+                                                </td>
                                                 <td>{{ $item->description }}</td>
 
 

@@ -22,6 +22,7 @@ Route::get('/marketing/hairstyles', 'PagesController@hairstyles');
 Route::get('/marketing/clothstyles', 'PagesController@clothstyles');
 Route::get('/marketing/make-ups', 'PagesController@makeups');
 Route::get('/marketing/models', 'PagesController@models');
+Route::get('/marketing/{id}', 'PagesController@getCategory');
 Route::get('/marketing/hairstyles/natural-hair', 'PagesController@naturalhair');
 Route::get('/marketing/hairstyles/synthetic-hair', 'PagesController@synthetichair');
 Route::get('/marketing/hairstyles/coloured-hair', 'PagesController@colouredhair');

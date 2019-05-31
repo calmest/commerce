@@ -21,7 +21,7 @@ class CategorySeeder extends Seeder
     		DB::table('categories')->insert([
                 'name' => $faker->name,
     			'url' => $faker->imageUrl($width = 500, $height = 500),
-    			'description' => $faker->paragraph(5),
+    			'description' => $faker->paragraph(1),
 
     		]);
     	}
