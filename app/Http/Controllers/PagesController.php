@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\Image;
+use App\Video;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -40,7 +43,7 @@ class PagesController extends Controller
 
     public function colouredhair(){
         return view('pages.marketing.hairstyles.coloured_hair');
-    }
+     }
 
     public function clothstyles(){
         return view('pages.marketing.clothestyles.index');
@@ -52,5 +55,15 @@ class PagesController extends Controller
 
     public function models(){
         return view('pages.marketing.models.index');
+    }
+
+    public function getCategory($id)
+    {
+       $category = Category::find($id);
+       $images = Image::where('category_id', '=', $id)->get();
+       $videos = Video::where('category_id', '=', $id)->get();
+       $data = ['category' => $category, 'images' => $images, 'videos' => $videos];
+        
+       return view('pages.marketing.category',compact('category','images','videos','data'));
     }
 }

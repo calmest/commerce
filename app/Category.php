@@ -2,14 +2,20 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Image;
 use App\Product;
+use App\Video;
+use Illuminate\Database\Eloquent\Model;
 
 
 class Category extends Model
 {
-    public function Product()
+    public function Images()
     {
-        return $this->hasMany(Product::class);
+        return $this->hasMany(Image::class);
+    }    
+    public function Videos()
+    {
+        return $this->hasMany(Video::class);
     }
 }

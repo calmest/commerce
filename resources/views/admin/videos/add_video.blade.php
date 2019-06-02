@@ -15,13 +15,14 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
                         <li class="breadcrumb-item">Users</li>
-                        <li class="breadcrumb-item active" aria-current="page">Add Product</li>
+                        <li class="breadcrumb-item active" aria-current="page">Add Video</li>
                     </ol>
                 </nav>
             </div>
         </div>
     </div>
 </div>
+
 <!-- ============================================================== -->
 <!-- End Bread crumb and right sidebar toggle -->
 <!-- ============================================================== -->
@@ -47,55 +48,6 @@
                     <strong>{!! session('flash_message_success') !!}</strong>
             </div>
         @endif
-        <form class="form-horizontal" method="POST" action="{{ url('/admin/add-image') }}" novalidate="novalidate" id="add_Product" name="add_Product" enctype='multipart/form-data'>
-            {{ csrf_field() }}
-            <div class="card-body">
-                <h4 class="card-title">Add Image</h4>
-                <hr>
-                <br>
-                
-                
-                <div class="form-group row">
-                    <label class="col-md-3 m-t-15">Select Product</label>
-                    <div class="col-md-9">
-                        <select class="select2 form-control custom-select" style="width: 100%; height:36px;" name="product_id">
-                            <option>Select</option>
-
-                            @foreach ($products as $item)
-                             <option value="{{$item->id}}">{{$item->product_name}}</option>
-                            @endforeach
-                            
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                        <label class="col-md-3">Image Upload</label>
-                        <div class="col-md-9">
-                            <div class="custom-file">
-                                <input type="file" name="avatar" class="custom-file-input" id="validatedCustomFile" required>
-                                <label class="custom-file-label" for="validatedCustomFile">Choose image...</label>
-                                <div class="invalid-feedback">Example invalid custom file feedback</div>
-                            </div>
-                        </div>
-                    </div>
-                   
-
-
-                <div class="form-group row">
-                    <label for="description" class="col-lg-3 col-md-3 col-sm-3 control-label col-form-label">Description</label>
-                    <div class="col-lg-9 col-md-9 col-sm-9">
-                        <textarea type="text" class="form-control" id="description" name="description" placeholder="Description" rows="5"></textarea>
-                    </div>
-                </div>
-            </div>
-            <div class="border-top">
-                <div class="card-body">
-                        <input type="submit" value="Add Image" class="btn btn-success">
-                </div>
-            </div>
-        </form>
-
         <form class="form-horizontal" method="POST" action="{{ url('/admin/add-video') }}" novalidate="novalidate" id="add_Product" name="add_Product" enctype='multipart/form-data'>
             {{ csrf_field() }}
             <div class="card-body">
@@ -105,16 +57,23 @@
                 
                 
                 <div class="form-group row">
-                    <label class="col-md-3 m-t-15">Select Product</label>
+                    <label class="col-md-3 m-t-15">Select Category</label>
                     <div class="col-md-9">
-                        <select class="select2 form-control custom-select" style="width: 100%; height:36px;" name="product_id">
+                        <select class="select2 form-control custom-select" style="width: 100%; height:36px;" name="category_id">
                             <option>Select</option>
 
-                            @foreach ($products as $item)
-                             <option value="{{$item->id}}">{{$item->product_name}}</option>
+                            @foreach ($category as $item)
+                             <option value="{{$item->id}}">{{$item->name}}</option>
                             @endforeach
                             
                         </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-md-3 m-t-15">Video Title</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="title" placeholder="Natural Hair...">
                     </div>
                 </div>
 
@@ -144,6 +103,8 @@
                 </div>
             </div>
         </form>
+
+        
     </div>
     <!-- ============================================================== -->
     <!-- End PAge Content -->

@@ -18,21 +18,29 @@ Route::get('/settings', 'UserController@settings');
 Route::get('/check-pwd', 'UserController@chkPassword');
 Route::match(['get', 'post'], '/update-pwd', 'UserController@updatePassword');
 
-// Products Section (user)
-Route::match(['get','post'], '/add-product', 'UserController@addProduct');
-// Route::get('/view-products', 'UserController@viewProducts');
-Route::match(['get','post'], '/edit-product/{id}', 'UserController@editProduct');
-Route::match(['get','post'], '/delete-product/{id}', 'UserController@deleteProduct');
+// // Products Section (user)
+// Route::match(['get','post'], '/add-product', 'UserController@addProduct');
+// // Route::get('/view-products', 'UserController@viewProducts');
+// Route::match(['get','post'], '/edit-product/{id}', 'UserController@editProduct');
+// Route::match(['get','post'], '/delete-product/{id}', 'UserController@deleteProduct');
 
 
-Route::get('/add-file', 'UserController@addFile');
+// Image Section (user)
 
-// add image
-
+Route::get('/image', 'UserController@addImage');
 Route::post('/add-image', 'ImageController@Upload');
+Route::get('/view-images', 'UserController@ManageImages');
+Route::match(['get','post'], '/edit-image/{id}', 'ImageController@update');
+Route::match(['get','post'], '/delete-image/{id}', 'ImageController@delete');
+
+
+// add video
+Route::get('/video', 'UserController@addVideo');
 Route::post('/add-video', 'VideoController@Upload');
+Route::get('/view-videos', 'UserController@ManageVideos');
+Route::match(['get','post'], '/edit-video/{id}', 'VideoController@update');
+Route::match(['get','post'], '/delete-video/{id}', 'VideoController@delete');
 
 
 
-Route::get('/view-products', 'UserController@viewProducts');
-Route::get('/view-files', 'UserController@viewFiles');
+// Route::get('/view-files', 'UserController@viewFiles');

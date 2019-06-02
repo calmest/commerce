@@ -15,19 +15,20 @@
                         <li class="sidebar-item"><a href="{{ url('/admin/view-categories') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> View Categories </span></a></li>
                     </ul>
                 </li>
-                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Products </span></a>
+                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Images </span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item"><a href="{{ url('/admin/add-product') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Product </span></a></li>
-                        <li class="sidebar-item"><a href="{{ url('/admin/add-file') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Product Image/Video </span></a></li>
-                        <li class="sidebar-item"><a href="{{ url('/admin/view-products') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> View Products </span></a></li>
+                        <li class="sidebar-item"><a href="{{ url('/admin/image') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Images </span></a></li>
+                        <li class="sidebar-item"><a href="{{ url('/admin/view-images') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> View Images </span></a></li>
                     </ul>
                 </li>
-                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Images / Video </span></a>
+             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Video </span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
+                        <li class="sidebar-item"><a href="{{ url('/admin/video') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Videos </span></a></li>
+                        <li class="sidebar-item"><a href="{{ url('/admin/view-videos') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> View videos </span></a></li>
+                    </ul>
+                </li>
+             
 
-                        <li class="sidebar-item"><a href="{{ url('/admin/view-files') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> View Products </span></a></li>
-                    </ul>
-                </li>
                 <li class="sidebar-item"><a href="{{ url('/admin/manage-users') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Manage Users </span></a></li>
 
                 
