@@ -46,7 +46,7 @@
                     <strong>{!! session('flash_message_success') !!}</strong>
             </div>
         @endif
-        <form class="form-horizontal" method="POST" action="{{ url('/admin/add-category') }}" novalidate="novalidate" id="add_category" name="add_category">
+        <form class="form-horizontal" method="POST" action="{{ url('/admin/add-category') }}" novalidate="novalidate" id="add_category" name="add_category" enctype='multipart/form-data'>
             {{ csrf_field() }}
             <div class="card-body">
                 <h4 class="card-title">Add Category</h4>
@@ -60,14 +60,13 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="name" class="col-lg-3 col-md-3 col-sm-3 control-label col-form-label">Category Level</label>
+                    <label for="name" class="col-lg-3 col-md-3 col-sm-3 control-label col-form-label">Category Image</label>
                     <div class="col-lg-9 col-md-9 col-sm-9">
-                        <select class="form-control" id="parent_id" name="parent_id">
-                            <option value="0">Main Category</option>
-                            @foreach ($levels as $val)
-                                <option value="{{ $val->id }}">{{ $val->name }}</option>
-                            @endforeach
-                        </select>
+                        <div class="custom-file">
+                                <input type="file" name="avatar" class="custom-file-input" id="validatedCustomFile" required>
+                                <label class="custom-file-label" for="validatedCustomFile">Choose image...</label>
+                                <div class="invalid-feedback">Example invalid custom file feedback</div>
+                            </div>
                     </div>
                 </div>
                 <div class="form-group row">

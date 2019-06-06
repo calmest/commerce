@@ -12,11 +12,18 @@ class CategoryController extends Controller
     //
     public function addCategory(Request $request){
         if($request->isMethod('post')){
+
+
+            $avatar = $request->avatar;
+            $filename = time(). '.' . $avatar->getClientOriginalExtension();
+            $avatar->move('storage/products', $filename);
+
+
             $data = $request->all();
             // echo "<pre>"; print_r($data); die;
             $category = new Category;
             $category->name = $data['category_name'];
-            $category->parent_id = $data['parent_id'];
+            $category->image = $filename;
             $category->description = $data['description'];
             $category->url = $data['url'];
             $category->status = '1';
@@ -25,9 +32,9 @@ class CategoryController extends Controller
             return redirect('/admin/view-categories')->with('flash_message_success', 'Category added Successfully!');
         }
 
-        $levels = Category::where(['parent_id'=>0])->get();
+     
 
-        return view('admin.categories.add_category')->with(compact('levels'));
+        return view('admin.categories.add_category');
     }
 
     public function editCategory(Request $request, $id = null){

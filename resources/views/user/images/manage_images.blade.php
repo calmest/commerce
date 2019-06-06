@@ -70,7 +70,7 @@
                                             <tr>
                                                 <td>{{ $item->id }}</td>
                                                 <td>{{ $item->image_title }}</td>
-                                                <td><img src="{{ $item->image }}" width="100px" height="100px" alt=""></td>
+                                                <td><img src="/storage/products/{{ $item->image }}" width="100px" height="100px" alt=""></td>
                                                 <td>{{ $item->description }}</td>
 
 
