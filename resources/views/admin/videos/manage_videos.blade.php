@@ -72,7 +72,7 @@
                                                 <td>{{ $item->video_title }}</td>
                                                 <td>
                                                     <video controls autoplay>
-                                                        <source src="{{ $item->video }}" width="100px" height="100px" type="video/mp4">
+                                                        <source src="/storage/products/{{ $item->video }}" width="100px" height="100px" type="video/mp4">
                                                      
                                                         Your browser does not support the video tag.
                                                     </video>

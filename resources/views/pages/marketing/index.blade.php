@@ -21,7 +21,7 @@
       <div class="col-lg-6 col-md-6">
         <div class="single_event position-relative">
           <div class="event_thumb">
-            <img src="img/marketing/category.jpg" alt="" />
+            <img src="storage/products/{{$value->image}}" alt="" />
           </div>
           <div class="event_details">
             <div class="d-flex mb-4">
