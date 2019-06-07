@@ -35,20 +35,14 @@
           <div class="col-lg-6">
             <div class="h_blog_text">
               <div class="h_blog_text_inner left right">
-                <h4>Welcome to our Institute</h4>
-                <p>
-                  Subdue whales void god which living don't midst lesser
-                  yielding over lights whose. Cattle greater brought sixth fly
-                  den dry good tree isn't seed stars were.
+                <h4>Welcome to <b>Customers Way</b></h4>
+                <p style="text-align: justify;">
+                    A platform where users can register and subscribe ,the registered users can upload their videos online and make money through downloads of Subscribers
                 </p>
-                <p>
-                  Subdue whales void god which living don't midst lesser yieldi
-                  over lights whose. Cattle greater brought sixth fly den dry
-                  good tree isn't seed stars were the boring.
+                <p style="text-align: justify;">
+                    B-style Is an initiative of customers way created to show the world  information Including style and. News In the fashion world.its a project handled by the Customers way team to project diffrent Style in the world to people and to pass infomation to the users
                 </p>
-                <a class="primary-btn" href="#">
-                  Learn More <i class="ti-arrow-right ml-1"></i>
-                </a>
+
               </div>
             </div>
           </div>
@@ -63,15 +57,15 @@
         <div class="row justify-content-center">
           <div class="col-lg-5">
             <div class="main_title">
-              <h2 class="mb-3 text-white">Awesome Feature</h2>
-              <p>
-                Replenish man have thing gathering lights yielding shall you
+              <h2 class="mb-3 text-white">Main Categories</h2>
+              <p style="color: #fff;">
+                Our main categories
               </p>
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-4 col-md-6">
+          <div class="col-lg-3 col-md-6">
             <div class="single_feature">
               <div class="icon"><span class="flaticon-student"></span></div>
               <div class="desc">
@@ -84,7 +78,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6">
+          <div class="col-lg-3 col-md-6">
             <div class="single_feature">
               <div class="icon"><span class="flaticon-book"></span></div>
               <div class="desc">
@@ -97,7 +91,20 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6">
+          <div class="col-lg-3 col-md-6">
+            <div class="single_feature">
+              <div class="icon"><span class="flaticon-earth"></span></div>
+              <div class="desc">
+                <h4 class="mt-3 mb-2">Global Certification</h4>
+                <p>
+                  One make creepeth, man bearing theira firmament won't great
+                  heaven
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
             <div class="single_feature">
               <div class="icon"><span class="flaticon-earth"></span></div>
               <div class="desc">
@@ -120,9 +127,9 @@
         <div class="row justify-content-center">
           <div class="col-lg-5">
             <div class="main_title">
-              <h2 class="mb-3">Client say about me</h2>
+              <h2 class="mb-3">Client say about us</h2>
               <p>
-                Replenish man have thing gathering lights yielding shall you
+                We are the best at what we do
               </p>
             </div>
           </div>

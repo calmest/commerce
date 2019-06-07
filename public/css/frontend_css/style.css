@@ -138,32 +138,32 @@ button:focus {
 /*----------------------------------------------------*/
 
 .section_gap {
-    padding: 130px 0;
+    padding: 50px 0;
 }
 
 @media (max-width: 991px) {
     .section_gap {
-        padding: 70px 0;
+        padding: 30px 0;
     }
 }
 
 .section_gap_top {
-    padding-top: 130px;
+    padding-top: 50px;
 }
 
 @media (max-width: 991px) {
     .section_gap_top {
-        padding-top: 70px;
+        padding-top: 30px;
     }
 }
 
 .section_gap_bottom {
-    padding-bottom: 130px;
+    padding-bottom: 50px;
 }
 
 @media (max-width: 991px) {
     .section_gap_bottom {
-        padding-bottom: 70px;
+        padding-bottom: 30px;
     }
 }
 
@@ -493,9 +493,9 @@ button:focus {
 
 .home_banner_area {
     z-index: 1;
-    min-height: 900px;
+    min-height: 700px;
     position: relative;
-    background: url(/img/banner/home-banner.jpg) no-repeat center;
+    background: url(/img/banner/home-banner.png) no-repeat center;
     background-size: cover;
 }
 
@@ -524,7 +524,7 @@ button:focus {
 
 .home_banner_area .banner_inner .banner_content p {
     font-size: 20px;
-    color: #002347;
+    color: #01070e;
     font-weight: 500;
 }
 
@@ -603,7 +603,7 @@ button:focus {
     right: 0;
     top: 0;
     bottom: 0;
-    background: rgba(0, 35, 71, 0.8);
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .banner_area .banner_inner .banner_content {
