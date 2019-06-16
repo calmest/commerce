@@ -32,7 +32,7 @@
                   <span class="ti-time mr-2"></span> 12:00 AM - 12:30 AM
                 </p>
                 <p>
-                  <span class="ti-location-pin mr-2"></span> Hilton Quebec
+                  <span class="ti-location-pin mr-2"></span> {{$value->description}}
                 </p>
               </div>
             </div>

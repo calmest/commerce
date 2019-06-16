@@ -54,10 +54,10 @@
                 <h4 class="card-title">Add Image</h4>
                 <hr>
                 <br>
-                
-                
+
+
                 <div class="form-group row">
-                    <label class="col-md-3 m-t-15">Select Product</label>
+                    <label class="col-md-3 m-t-15">Select Category</label>
                     <div class="col-md-9">
                         <select class="select2 form-control custom-select" style="width: 100%; height:36px;" name="category_id">
                             <option>Select</option>
@@ -65,7 +65,7 @@
                             @foreach ($category as $item)
                              <option value="{{$item->id}}">{{$item->name}}</option>
                             @endforeach
-                            
+
                         </select>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                             </div>
                         </div>
                     </div>
-                   
+
 
 
                 <div class="form-group row">
@@ -104,7 +104,7 @@
             </div>
         </form>
 
-        
+
     </div>
     <!-- ============================================================== -->
     <!-- End PAge Content -->

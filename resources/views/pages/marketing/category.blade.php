@@ -39,7 +39,7 @@
                                     @foreach(\App\Category::all() as $key => $value)
                                     <li>
                                     <!--     @if($category->name === $value->name)
-                                        
+
                                         @endif -->
                                         <a href="{{$value->id}}" class="d-flex justify-content-between active">
                                             <p>{{$value->name}}</p>
@@ -47,11 +47,21 @@
                                         </a>
                                     </li>
                                     @endforeach
-                                   
-                                    
+
+
                                 </ul>
                                 <div class="br"></div>
                             </aside>
+
+                        <aside class="single_sidebar_widget ads_widget">
+                            <a href="#"><img class="/img-fluid" src="/img/blog/add.jpg" alt=""></a>
+                            <div class="br"></div>
+                        </aside>
+
+                        <aside class="single_sidebar_widget ads_widget">
+                            <a href="#"><img class="/img-fluid" src="/img/blog/add.jpg" alt=""></a>
+                            <div class="br"></div>
+                        </aside>
 
                         <aside class="single_sidebar_widget ads_widget">
                             <a href="#"><img class="/img-fluid" src="/img/blog/add.jpg" alt=""></a>
@@ -84,11 +94,18 @@
                         <h4 class="widget_title">{{$category->name}}</h4>
                         <div class="row">
                              <h2>Images</h2>
-                            @foreach($images as $key => $img)
-                            <div class="col-lg-6 col-md-6">
-                                <img src="{{$img->image}}" class="img-thumbnail" alt="">
-                            </div>
-                            @endforeach
+                             <table>
+                                <tr>
+                                        @foreach($images as $key => $img)
+                                        <div class="col-lg-6 col-md-4">
+                                            <td>
+                                            <img src="/storage/products/{{$img->image}}" width="200px" height="200px" class="" alt=""></td>
+                                        </div>
+                                        @endforeach
+
+                                </tr>
+                            </table>
+
                         </div>
 
                         <div class="row">
@@ -96,8 +113,8 @@
                             @foreach($videos as $key => $vid)
                             <div class="col-lg-6 col-md-6">
                                 <video controls autoplay>
-                                    <source src="{{ $vid->video }}" width="100px" height="100px" type="video/mp4">
-                                 
+                                    <source src="/storage/products/{{ $vid->video }}" width="100px" height="100px" type="video/mp4">
+
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
