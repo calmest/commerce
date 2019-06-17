@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'VetoMart') }}</title>
+    <title>{{ config('app.name', 'Customers Way') }}</title>
 
 
         <!-- Styles -->

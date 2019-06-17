@@ -12,7 +12,7 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/backend_images/favicon.png') }}">
 
-    <title>VETOMART - Login</title>
+    <title>{{ config('app.name', 'CUSTOMERS WAY') }}</title>
 
     <!-- Custom CSS -->
     <link href="{{ asset('css/backend_css/style.min.css') }}" rel="stylesheet">
@@ -59,7 +59,7 @@
                         </div>
                     @endif
                     <div class="text-center p-t-20 p-b-20">
-                        <span class="db"><img src="{{ asset('images/backend_images/logo.png') }}" alt="logo" /></span>
+                        <span class="db"><img src="{{ asset('img/logos.png') }}" alt="logo" /></span>
                     </div>
                     <!-- Form -->
                     <form class="form-horizontal m-t-20" id="loginform" role="form" method="POST" action="{{ url('/user/login') }}">
@@ -85,7 +85,7 @@
                                 <div class="form-group">
                                     <div class="p-t-20">
                                         <button class="btn btn-info" id="to-recover" type="button"><i class="fa fa-lock m-r-5"></i> Lost password?</button>
-                                        <button class="btn btn-info" ><i class="fa fa-lock m-r-5"></i><a href="/user/register">Register</a></button>
+                                        <button class="btn btn-info" ><i class="fa fa-lock m-r-5"></i><a href="/user/register" style="color: #fff;">Register</a></button>
 
                                         <button class="btn btn-success float-right" type="submit" value="Login">Login</button>
                                     </div>

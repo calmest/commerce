@@ -57,7 +57,6 @@ class AdminController extends Controller
 
     public function Users()
     {
-
         $users = User::all();
         return view('admin/clients/manageuser',compact('users'));
         # code...
@@ -84,7 +83,6 @@ class AdminController extends Controller
 
     public function addImage()
     {
-
         $category = Category::all();
         return view('admin.images.add_image', compact('category'));
     # code...
@@ -92,7 +90,6 @@ class AdminController extends Controller
 
     public function addVideo()
     {
-
         $category = Category::all();
         return view('admin.videos.add_video', compact('category'));
     # code...
@@ -102,20 +99,14 @@ class AdminController extends Controller
     {
         // $id = Auth::user()->id;
         $images = Image::all();
-      
-
         return view('admin.images.manage_images', compact('images'));
-
     }   
 
     public function ManageVideos()
     {
         // $id = Auth::user()->id;
         $videos = Video::all();
-      
-
         return view('admin.videos.manage_videos', compact('videos'));
-
     }
 
 

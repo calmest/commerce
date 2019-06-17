@@ -17,11 +17,13 @@ Route::get('/dashboard', function () {
 Route::get('/settings', 'AdminController@settings');
 Route::get('/check-pwd', 'AdminController@chkPassword');
 Route::match(['get', 'post'], '/update-pwd', 'AdminController@updatePassword');
+
 // Categories Section (Admin)
 Route::match(['get','post'], '/add-category', 'CategoryController@addCategory');
 Route::match(['get','post'], '/edit-category/{id}', 'CategoryController@editCategory');
 Route::match(['get','post'], '/delete-category/{id}', 'CategoryController@deleteCategory');
 Route::get('/view-categories', 'CategoryController@viewCategories');
+
 // Products Section (Admin)
 Route::match(['get','post'], '/add-product', 'ProductsController@addProduct');
 Route::get('/add-file', 'ProductsController@addFile');
@@ -56,3 +58,6 @@ Route::match(['get','post'], '/delete-product/{id}', 'ProductsController@deleteP
 Route::get('/manage-users', 'AdminController@Users');
 Route::match(['get','post'], '/edit-user/{id}', 'AdminController@editUser');
 Route::match(['get','post'], '/delete-user/{id}', 'AdminController@deleteUser');
+
+// add post
+Route::resource('posts', 'PostsController');
