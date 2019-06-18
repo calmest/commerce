@@ -58,9 +58,4 @@
   </div>
 </div>
 <!--================ End Events Area =================-->
-
-
-
-
-
 @endsection ('content')

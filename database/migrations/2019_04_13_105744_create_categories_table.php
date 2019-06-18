@@ -18,6 +18,7 @@ class CreateCategoriesTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('url');
+            $table->string('image');
             $table->tinyInteger('status')->default(0);
             $table->rememberToken();
             $table->timestamps();
