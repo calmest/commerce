@@ -36,9 +36,8 @@
         <div class="col-md-6 col-lg-2 col-xlg-3">
             <div class="card card-hover">
                 <div class="box bg-cyan text-center">
-                    
-                    <h6 class="text-white">
-                        <p>Users</p>
+                    <h1 class="font-light text-white"><i class="mdi mdi-view-dashboard"></i></h1>
+                    <h6 class="text-white">Total Users
                         <?php
                             $users = \App\User::all();
                             echo count($users);
@@ -61,7 +60,7 @@
                 </div>
             </div>
         </div>
-            <!-- Column -->
+        <!-- Column -->
         <div class="col-md-6 col-lg-4 col-xlg-3">
             <div class="card card-hover">
                 <div class="box bg-warning text-center">
