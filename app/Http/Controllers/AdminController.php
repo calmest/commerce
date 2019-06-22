@@ -72,7 +72,7 @@ class AdminController extends Controller
         $UserDetails = User::where('id', $id)->first();
         // $levels = User::where(['parent_id'=>0])->get();
 
-        return view('admin.clients.edit_User', $UserDetails);
+        return view('admin.clients.edit_user')->with(compact('UserDetails'));
     }
 
     public function deleteUser($id = null){
