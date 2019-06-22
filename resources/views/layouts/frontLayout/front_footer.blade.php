@@ -2,6 +2,9 @@
 <footer class="footer-area section_gap">
     <div class="container">
       <div class="row">
+      <div class="col-lg-4 col-md-6 single-footer-widget">
+          <img src="/img/logof.png" width="330px" height="220px"/>
+        </div>
         <div class="col-lg-2 col-md-6 single-footer-widget">
           <h4>Top Pages</h4>
           <ul>
@@ -20,10 +23,6 @@
             <li><a href="/terms-and-conditions">Terms & Conditions</a></li>
           </ul>
         </div>
-        <div class="col-lg-4 col-md-6 single-footer-widget">
-          <img src="/img/logo.png" width="330px" height="200px"/>
-        </div>
-
         <div class="col-lg-4 col-md-6 single-footer-widget">
           <h4>Newsletter</h4>
           <p style="color: #fff;">You can trust us. we only send promo offers,</p>
