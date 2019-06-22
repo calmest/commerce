@@ -43,7 +43,7 @@
                                         @endif -->
                                         <a href="{{$value->id}}" class="d-flex justify-content-between active">
                                             <p>{{$value->name}}</p>
-                                            <p>37</p>
+                                            
                                         </a>
                                     </li>
                                     @endforeach
