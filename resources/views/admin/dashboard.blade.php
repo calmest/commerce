@@ -32,6 +32,7 @@
     <!-- Sales Cards  -->
     <!-- ============================================================== -->
     <div class="row">
+        
         <!-- Column -->
         <div class="col-md-6 col-lg-2 col-xlg-3">
             <div class="card card-hover">
@@ -74,16 +75,69 @@
                 </div>
             </div>
         </div>
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Hello Admin, Welcome to Customers Way</h3>
+                    <p>A platform where users can register and subscribe ,the registered users can upload their videos online and make money through downloads of Subscribers.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Images</h3>
+                    <p>Have exciting images you would like to share with your users?</p>
+                    <a href="{{ url('/admin/image') }}"> <button type="button" class="btn btn-outline-success">Add Image</button> </a>
+                    <a href="{{ url('/admin/view-images') }}"> <button type="button" class="btn btn-outline-warning">View Images</button> </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Videos</h3>
+                    <p>Have awesome videos you would like to show your users?</p>
+                    <a href="{{ url('/admin/video') }}"> <button type="button" class="btn btn-outline-success">Add Video</button> </a>
+                    <a href="{{ url('/admin/view-videos') }}"> <button type="button" class="btn btn-outline-warning">View Videos</button> </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Posts</h3>
+                    <p>Engage with your users by sharing mouth watering content periodically.</p>
+                    <a href="{{ url('/admin/add-post') }}"> <button type="button" class="btn btn-outline-success">Add Post</button> </a>
+                    <a href="{{ url('/admin/view-post') }}"> <button type="button" class="btn btn-outline-warning">View Posts</button> </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Categories</h3>
+                    <p>Segment your content for easy access for your users.</p>
+                    <a href="{{ url('/admin/add-category') }}"> <button type="button" class="btn btn-outline-success">Add Category</button> </a>
+                    <a href="{{ url('/admin/view-category') }}"> <button type="button" class="btn btn-outline-warning">View Categories</button> </a>
+                </div>
+            </div>
+        </div>
+
+        
         
     </div>
     <style>
     .space{padding: 50px; height: 100px; }</style>
-   <div class="space">  
-       </div>
-   <div class="space">  
-  </div>
-    <div class="space">  
-                 </div>
+   <div class="space">
+
+   </div>
+   <div class="space">
+
+   </div>
+    <div class="space">
+
+    </div>
     <!-- ============================================================== -->
     <!-- Recent comment and chats -->
     <!-- ============================================================== -->

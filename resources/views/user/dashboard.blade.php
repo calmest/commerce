@@ -32,6 +32,7 @@
     <!-- Sales Cards  -->
     <!-- ============================================================== -->
     <div class="row">
+        
         <!-- Column -->
         <div class="col-md-6 col-lg-4 col-xlg-3">
             <div class="card card-hover">
@@ -61,6 +62,35 @@
                 </div>
             </div>
         </div>
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Hello Username, Welcome to Customers Way</h2>
+                    <p>A platform where users can register and subscribe ,the registered users can upload their videos online and make money through downloads of Subscribers.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Images</h3>
+                    <p>Have exciting images you would like to share with friends?</p>
+                    <a href="{{ url('/user/image') }}"> <button type="button" class="btn btn-outline-success">Add Image</button> </a>
+                    <a href="{{ url('/user/view-images') }}"> <button type="button" class="btn btn-outline-warning">View Images</button> </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Videos</h3>
+                    <p>Have awesome videos you would like to share with friends?</p>
+                    <a href="{{ url('/user/video') }}"> <button type="button" class="btn btn-outline-success">Add Video</button> </a>
+                    <a href="{{ url('/user/view-videos') }}"> <button type="button" class="btn btn-outline-warning">View Videos</button> </a>
+                </div>
+            </div>
+        </div>
+        
     </div>
 
 </div>
