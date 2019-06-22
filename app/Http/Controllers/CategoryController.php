@@ -16,7 +16,7 @@ class CategoryController extends Controller
 
             $avatar = $request->avatar;
             $filename = time(). '.' . $avatar->getClientOriginalExtension();
-            $avatar->move('storage/products', $filename);
+            $avatar->move(public_path().'storage/products', $filename);
 
 
             $data = $request->all();
@@ -25,7 +25,7 @@ class CategoryController extends Controller
             $category->name = $data['category_name'];
             $category->image = $filename;
             $category->description = $data['description'];
-            $category->url = $data['url'];
+            
             $category->status = '1';
 
             $category->save();

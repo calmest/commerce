@@ -46,49 +46,26 @@
                     <strong>{!! session('flash_message_success') !!}</strong>
             </div>
         @endif
-        <form class="form-horizontal" method="POST" action="{{ url('/admin/edit-category/'.$categoryDetails->id) }}" novalidate="novalidate" id="add_category" name="add_category">
-            {{ csrf_field() }}
+        {!! Form::open(['action' => ['PostsController@update', $post->id], 'class' => 'form-horinzontal', 'novalidate' => 'novalidate', 'id' => 'add_post', 'name' => 'add_post', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+    
             <div class="card-body">
                 <h4 class="card-title">Edit Post</h4>
                 <hr>
                 <br>
-                <div class="form-group row">
-                    <label for="name" class="col-lg-3 col-md-3 col-sm-3 control-label col-form-label">Category Name</label>
-                    <div class="col-lg-9 col-md-9 col-sm-9">
-                        <input type="text" class="form-control" id="category_name" name="category_name" value="{{ $categoryDetails->name }}" placeholder="Category Name">
-                        <span id="chkPwd"></span>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="name" class="col-lg-3 col-md-3 col-sm-3 control-label col-form-label">Category Level</label>
-                    <div class="col-lg-9 col-md-9 col-sm-9">
-                        <select class="form-control" id="parent_id" name="parent_id">
-                            <option value="0">Main Category</option>
-                            @foreach ($levels as $val)
-                                <option value="{{ $val->id }}" @if($val->id == $categoryDetails->parent_id) selected @endif>{{ $val->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="url" class="col-lg-3 col-md-3 col-sm-3 control-label col-form-label">URL</label>
-                    <div class="col-lg-9 col-md-9 col-sm-9">
-                        <input type="text" class="form-control" id="url" name="url" value="{{ $categoryDetails->url }}" placeholder="URL">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="description" class="col-lg-3 col-md-3 col-sm-3 control-label col-form-label">Description</label>
-                    <div class="col-lg-9 col-md-9 col-sm-9">
-                        <textarea type="text" class="form-control" id="description" name="description" placeholder="Description" rows="5">{{ $categoryDetails->description }}</textarea>
-                    </div>
-                </div>
-            </div>
-            <div class="border-top">
-                <div class="card-body">
-                        <input type="submit" value="Edit Category" class="btn btn-success">
-                </div>
-            </div>
-        </form>
+                <div class="form-group">
+            {{ Form::label('title', 'Title') }}
+            {{ Form::text('title', $post->title, ['class' => 'form-control', 'placeholder' => 'Title', 'autofocus']) }}
+        </div>
+        <div class="form-group">
+                {{ Form::label('body', 'Body') }}
+                {{ Form::textarea('body', $post->body, ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Body Text']) }}
+        </div>
+        <div class="form-group">
+            {{ Form::file('cover_image') }}
+        </div>
+        {{ Form::hidden('_method','PUT') }}
+        {{ Form::submit('Submit', ['class'=>'btn btn-primary']) }}
+        {!! Form::close() !!}
     </div>
     <!-- ============================================================== -->
     <!-- End PAge Content -->

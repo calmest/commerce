@@ -46,48 +46,33 @@
                     <strong>{!! session('flash_message_success') !!}</strong>
             </div>
         @endif
-        <form class="form-horizontal" method="POST" action="{{ url('/admin/add-post') }}" novalidate="novalidate" id="add_category" name="add_category" enctype='multipart/form-data'>
-            {{ csrf_field() }}
+        {!! Form::open([ 'class' => 'form-horizontal', 'novalidate' => 'novalidate', 'id' => 'add_post', 'name' => 'add_post', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+        
             <div class="card-body">
                 <h4 class="card-title">Add Post</h4>
                 <hr>
                 <br>
-                <div class="form-group row">
-                    <label for="name" class="col-lg-3 col-md-3 col-sm-3 control-label col-form-label">Category Name</label>
-                    <div class="col-lg-9 col-md-9 col-sm-9">
-                        <input type="text" class="form-control" id="category_name" name="category_name" placeholder="Category Name">
-                        <span id="chkPwd"></span>
-                    </div>
+                <div class="form-group">
+                    {{ Form::label('title', 'Title') }}
+                    {{ Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'Title', 'autofocus']) }}
                 </div>
-                <div class="form-group row">
-                    <label for="name" class="col-lg-3 col-md-3 col-sm-3 control-label col-form-label">Category Image</label>
-                    <div class="col-lg-9 col-md-9 col-sm-9">
-                        <div class="custom-file">
-                                <input type="file" name="avatar" class="custom-file-input" id="validatedCustomFile" required>
-                                <label class="custom-file-label" for="validatedCustomFile">Choose image...</label>
-                                <div class="invalid-feedback">Example invalid custom file feedback</div>
-                            </div>
-                    </div>
+                <div class="form-group">
+                    {{ Form::label('cover_image', 'Image') }} <br>
+                    {{ Form::file('cover_image') }}
                 </div>
-                <div class="form-group row">
-                    <label for="url" class="col-lg-3 col-md-3 col-sm-3 control-label col-form-label">URL</label>
-                    <div class="col-lg-9 col-md-9 col-sm-9">
-                        <input type="text" class="form-control" id="url" name="url" placeholder="URL">
-                    </div>
+                <div class="form-group">
+                    {{ Form::label('category', 'Category') }}
+                    {{ Form::text('category', '', ['class' => 'form-control', 'placeholder' => 'Category']) }}
                 </div>
-                <div class="form-group row">
-                    <label for="description" class="col-lg-3 col-md-3 col-sm-3 control-label col-form-label">Description</label>
-                    <div class="col-lg-9 col-md-9 col-sm-9">
-                        <textarea type="text" class="form-control" id="description" name="description" placeholder="Description" rows="5"></textarea>
-                    </div>
+                <div class="form-group">
+                    {{ Form::label('body', 'Body') }}
+                    {!! Form::textarea('body', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Body Text']) !!}
                 </div>
-            </div>
-            <div class="border-top">
-                <div class="card-body">
-                        <input type="submit" value="Add Category" class="btn btn-success">
-                </div>
-            </div>
-        </form>
+                
+                {{ Form::submit('Add Post', ['class'=>'btn btn-success']) }}
+        
+        {!! Form::close() !!}
+        
     </div>
     <!-- ============================================================== -->
     <!-- End PAge Content -->

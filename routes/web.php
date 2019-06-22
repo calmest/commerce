@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
-Route::get('/blog', 'PagesController@blog');
+Route::get('/blog', 'PostsController@index');
 Route::get('/contact', 'PagesController@contact');
 Route::get('/marketing', 'PagesController@marketing');
 Route::get('/marketing/hairstyles', 'PagesController@hairstyles');
@@ -27,6 +27,7 @@ Route::get('/marketing/{id}', 'PagesController@getCategory');
 Route::get('/marketing/hairstyles/natural-hair', 'PagesController@naturalhair');
 Route::get('/marketing/hairstyles/synthetic-hair', 'PagesController@synthetichair');
 Route::get('/marketing/hairstyles/coloured-hair', 'PagesController@colouredhair');
+//Route::get('/posts/show', 'PostsController@show');
 
 Route::get('/subscribe', 'SubscriptionController@index');
 Route::post('/subscribe', 'SubscriptionController@store');
@@ -48,7 +49,7 @@ Route::group(['prefix' => 'admin'], function () {
   Route::get('/password/reset/{token}', 'AdminAuth\ResetPasswordController@showResetForm');
   
   // add post
-  Route::resource('posts', 'PostsController');
+  //Route::resource('posts', 'PostsController');
 });
 
 Route::group(['prefix' => 'user'], function () {

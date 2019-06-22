@@ -58,24 +58,24 @@
                                     <table id="zero_config" class="table table-striped table-bordered">
                                         <thead>
                                             <tr>
-                                                <th><strong>Category ID</strong></th>
-                                                <th><strong>Category Name</strong></th>
-                                                <th><strong>Category Level</strong></th>
-                                                <th><strong>Category URL</strong></th>
+                                                <th><strong>Post ID</strong></th>
+                                                <th><strong>Post Title</strong></th>
+                                                <th><strong>Post Body</strong></th>
                                                 <th><strong>Actions</strong></th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($categories as $category)
+                                            @foreach ($posts as $post)
                                             <tr>
-                                                <td>{{ $category->id }}</td>
-                                                <td>{{ $category->name }}</td>
-                                                <td>{{ $category->parent_id }}</td>
-                                                <td>{{ $category->url }}</td>
+                                                <td>{{ $post->id }}</td>
+                                                <td>{{ $post->title }}</td>
+                                                <td>{{ $post->body }}</td>
+                                                
                                                 <td>
 
-                                                    <a href="{{ url('/admin/edit-category/'.$category->id) }}" class="btn btn-cyan btn-sm">Edit</a>
-                                                    <a id="delCat" href="{{ url('/admin/delete-category/'.$category->id) }}" class="btn btn-danger btn-sm">Delete</a>
+                                                    <a href="/posts/{{ $post->id }}/edit" class="btn btn-cyan btn-sm">Edit</a>
+                                                    <a id="delCat" href="{{ url('/admin/delete-post/'.$post->id) }}" class="btn btn-danger btn-sm">Delete</a>
+                                                    
 
                                                 </td>
                                             </tr>
@@ -83,10 +83,9 @@
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <th><strong>Category ID</strong></th>
-                                                <th><strong>Category Name</strong></th>
-                                                <th><strong>Category Level</strong></th>
-                                                <th><strong>Category URL</strong></th>
+                                                <th><strong>Post ID</strong></th>
+                                                <th><strong>Post Title</strong></th>
+                                                <th><strong>Post Body</strong></th>
                                                 <th><strong>Actions</strong></th>
                                             </tr>
                                         </tfoot>

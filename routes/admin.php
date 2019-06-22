@@ -42,6 +42,12 @@ Route::post('/add-video', 'VideoController@Upload');
 Route::get('/view-videos', 'AdminController@ManageVideos');
 Route::match(['get','post'], '/edit-video/{id}', 'VideoController@update');
 Route::match(['get','post'], '/delete-video/{id}', 'VideoController@delete');
+
+// Posts
+Route::get('/add-post', 'AdminController@addPost');
+Route::get('/view-posts', 'AdminController@ManagePosts');
+Route::match(['get','post'], '/edit-post/{id}', 'PostController@update');
+Route::match(['get','post'], '/delete-post/{id}', 'PostController@destroy');
 ;
 
 
@@ -59,5 +65,4 @@ Route::get('/manage-users', 'AdminController@Users');
 Route::match(['get','post'], '/edit-user/{id}', 'AdminController@editUser');
 Route::match(['get','post'], '/delete-user/{id}', 'AdminController@deleteUser');
 
-// add post
-Route::resource('posts', 'PostsController');
+
