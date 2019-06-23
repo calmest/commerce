@@ -46,7 +46,7 @@
                     <strong>{!! session('flash_message_success') !!}</strong>
             </div>
         @endif
-        {!! Form::open([ 'class' => 'form-horizontal', 'novalidate' => 'novalidate', 'id' => 'add_post', 'name' => 'add_post', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+        {!! Form::open(['action' => 'PostsController@store', 'class' => 'form-horizontal', 'novalidate' => 'novalidate', 'id' => 'add_post', 'name' => 'add_post', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
         
             <div class="card-body">
                 <h4 class="card-title">Add Post</h4>

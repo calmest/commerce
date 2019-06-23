@@ -73,9 +73,12 @@
                                                 
                                                 <td>
 
-                                                    <a href="/posts/{{ $post->id }}/edit" class="btn btn-cyan btn-sm">Edit</a>
+                                                    <a href="admin/posts/{{ $post->id }}/edit" class="btn btn-cyan btn-sm">Edit</a>
                                                     <a id="delCat" href="{{ url('/admin/delete-post/'.$post->id) }}" class="btn btn-danger btn-sm">Delete</a>
-                                                    
+                                                    {!! Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'pull-right']) !!}
+                                                    {{ Form::hidden('_method', 'DELETE') }}
+                                                    {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
+                                                    {!! Form::close() !!}
 
                                                 </td>
                                             </tr>

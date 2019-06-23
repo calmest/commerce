@@ -46,8 +46,10 @@ Route::match(['get','post'], '/delete-video/{id}', 'VideoController@delete');
 // Posts
 Route::get('/add-post', 'AdminController@addPost');
 Route::get('/view-posts', 'AdminController@ManagePosts');
-Route::match(['get','post'], '/edit-post/{id}', 'PostController@update');
-Route::match(['get','post'], '/delete-post/{id}', 'PostController@destroy');
+Route::match(['get','post'], '/edit-post/{id}', [
+    'uses' => 'PostController@update']);
+Route::match(['get','post'], '/delete-post/{id}', [
+    'uses' => 'PostController@destroy']);
 ;
 
 
