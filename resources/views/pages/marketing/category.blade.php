@@ -90,30 +90,28 @@
                 <div class="col-lg-8">
 
                     <div class="single-sidebar-widget blog_left_sidebar">
-                        <h4 class="widget_title">{{$category->name}}</h4>
+                        <h4 class="widget_title">{{$category->name}}</h4><br>
+                            <div class="row">
+                                <h2 class="widget_title">Images</h2>
+                            </div>
+                            <div class="row">
+                                @foreach($images as $key => $img)
+                                <div class="col-lg-3 col-md-3">
+                                    <h5>{{$img->image_title}}</h5>
+                                    <img src="/storage/products/{{$img->image}}" width="200px" height="200px" class="" alt="">
+                                </div>
+                                @endforeach
+                            </div>
+                            <br>
                         <div class="row">
-                             <h2 class="widget_title">Images</h2>
-                             <table>
-                                <tr>
-                                    @foreach($images as $key => $img)
-                                    <div class="col-lg-6 col-md-4">
-                                        <td>
-                                        <img src="/storage/products/{{$img->image}}" width="200px" height="200px" class="" alt=""></td>
-                                    </div>
-                                    @endforeach
-
-                                </tr>
-                            </table>
-
+                            <h2 class="widget_title">Video</h2>
                         </div>
-
                         <div class="row">
-                             <h2 class="widget_title">Video</h2>
                             @foreach($videos as $key => $vid)
                             <div class="col-lg-6 col-md-6">
+                                <h5>{{$vid->video_title}}</h5>
                                 <video controls>
                                     <source src="/storage/products/{{ $vid->video }}" width="200px" height="200px" type="video/mp4">
-
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
