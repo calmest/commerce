@@ -17,7 +17,7 @@
                 </li>
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Posts </span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item"><a href="{{ url('/admin/add-post') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Post </span></a></li>
+                        <li class="sidebar-item"><a href="{{ url('/admin/post') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Post </span></a></li>
                         <li class="sidebar-item"><a href="{{ url('/admin/view-posts') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> View Post </span></a></li>
                     </ul>
                 </li>

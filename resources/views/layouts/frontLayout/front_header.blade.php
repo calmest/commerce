@@ -44,19 +44,20 @@
               id="navbarSupportedContent"
             >
               <ul class="nav navbar-nav menu_nav ml-auto">
-                <li class="nav-item active">
+                <li class="{{ Request::is('/') ? 'active' : '' }} nav-item">
                   <a class="nav-link" href="/">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="{{ Request::is('about') ? 'active' : '' }} nav-item">
                   <a class="nav-link" href="/about">About</a>
                 </li>
                 
-                <li class="nav-item">
+                <li class="{{ Request::is('blog') ? 'active' : '' }} nav-item">
                   <a class="nav-link" href="/blog">Blog</a>
                 </li>
-                <li class="nav-item">
+                <li class="{{ Request::is('contact') ? 'active' : '' }} nav-item">
                     <a class="nav-link" href="/contact">Contact</a>
                 </li>
+                @guest
                 <li class="nav-item submenu dropdown">
                     <a
                         href="#"
@@ -77,7 +78,27 @@
                         >
                         </li>
                     </ul>
-                    </li>
+                  </li>
+                @else
+                <li class="nav-item dropdown">
+                  <a id="navbarDropdown" class="nav-link btn-success btn-lg dropdown-toggle" style="border-radius: 5px;" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                      {{ Auth::user()->name }} <span class="caret"></span>
+                  </a>
+
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item btn-success btn-lg" style="color:#fff; border-radius: 0px; display: block; width: 100%; font-size: 18px;" href="/user/dashboard">Dashboard</a>
+                      <a class="dropdown-item btn-primary btn-lg" style="color:#fff; border-radius: 0px; display: block;" href="{{ route('logout') }}"
+                          onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                          {{ __('Logout') }}
+                      </a>
+
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                          @csrf
+                      </form>
+                  </div>
+                </li>
+                @endguest
                 <li class="nav-item">
                   <a href="#" class="nav-link search" id="search">
                     <i class="ti-search"></i>

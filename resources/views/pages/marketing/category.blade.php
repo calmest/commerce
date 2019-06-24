@@ -42,8 +42,7 @@
 
                                         @endif -->
                                         <a href="{{$value->id}}" class="d-flex justify-content-between active">
-                                            <p>{{$value->name}}</p>
-                                            
+                                            <p>{{$value->name}}</p>                                            
                                         </a>
                                     </li>
                                     @endforeach
@@ -93,15 +92,15 @@
                     <div class="single-sidebar-widget blog_left_sidebar">
                         <h4 class="widget_title">{{$category->name}}</h4>
                         <div class="row">
-                             <h2>Images</h2>
+                             <h2 class="widget_title">Images</h2>
                              <table>
                                 <tr>
-                                        @foreach($images as $key => $img)
-                                        <div class="col-lg-6 col-md-4">
-                                            <td>
-                                            <img src="/storage/products/{{$img->image}}" width="200px" height="200px" class="" alt=""></td>
-                                        </div>
-                                        @endforeach
+                                    @foreach($images as $key => $img)
+                                    <div class="col-lg-6 col-md-4">
+                                        <td>
+                                        <img src="/storage/products/{{$img->image}}" width="200px" height="200px" class="" alt=""></td>
+                                    </div>
+                                    @endforeach
 
                                 </tr>
                             </table>
@@ -109,11 +108,11 @@
                         </div>
 
                         <div class="row">
-                             <h2>Video</h2>
+                             <h2 class="widget_title">Video</h2>
                             @foreach($videos as $key => $vid)
                             <div class="col-lg-6 col-md-6">
-                                <video controls autoplay>
-                                    <source src="/storage/products/{{ $vid->video }}" width="100px" height="100px" type="video/mp4">
+                                <video controls>
+                                    <source src="/storage/products/{{ $vid->video }}" width="200px" height="200px" type="video/mp4">
 
                                     Your browser does not support the video tag.
                                 </video>
