@@ -108,7 +108,7 @@
                         </div>
                         <div class="row">
                             @foreach($videos as $key => $vid)
-                            <div class="col-lg-6 col-md-6">
+                            <div class="col-lg-4 col-md-4">
                                 <h5>{{$vid->video_title}}</h5>
                                 <video controls>
                                     <source src="/storage/products/{{ $vid->video }}" width="200px" height="200px" type="video/mp4">
