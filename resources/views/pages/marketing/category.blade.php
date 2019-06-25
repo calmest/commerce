@@ -1,8 +1,16 @@
 @extends('layouts.frontLayout.front_design')
 
 @section('content')
+    <style>
+        img.hover-shadow {
+            transition: 0.3s;
+        }
 
+        .hover-shadow:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
 
+    </style>
 
 <!--================ Home Banner Area =================-->
     <section class="banner_area">
@@ -98,8 +106,9 @@
                                 @foreach($images as $key => $img)
                                 <div class="col-lg-3 col-md-3">
                                     <h5>{{$img->image_title}}</h5>
-                                    <img src="/storage/products/{{$img->image}}" width="200px" height="200px" class="" alt="">
+                                    <img  src="/storage/products/{{$img->image}}" width="200px" height="200px" class="hover-shadow" alt="">
                                 </div>
+                                
                                 @endforeach
                             </div>
                             <br>
@@ -123,6 +132,58 @@
             </div>
         </div>
     </section>
+
+<!--<script>
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+        }
+    </script> -->
     <!--================ End Content Area =================-->
+
+    
+
+<!--<script>
+        // Open the Modal
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        // Close the Modal
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+    </script> -->
 
 @endsection ('content')
