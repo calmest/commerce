@@ -20,7 +20,7 @@
             <li><a href="#">Logistics</a></li>
             <li><a href="/marketing">Marketing</a></li>
             <li><a href="#">Disclaimer</a></li>
-            <li><a href="/terms-and-conditions">Terms & Conditions</a></li>
+            <li><a href="/terms">Terms & Conditions</a></li>
           </ul>
         </div>
         <div class="col-lg-4 col-md-6 single-footer-widget">

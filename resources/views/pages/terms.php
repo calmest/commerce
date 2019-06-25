@@ -13,7 +13,7 @@
                 <h2>About Us</h2>
                 <div class="page_link">
                   <a href="/">Home</a>
-                  <a href="/about">About Us</a>
+                  <a href="/terms">Terms and Conditions</a>
                 </div>
               </div>
             </div>
