@@ -29,6 +29,7 @@ Route::get('/marketing/hairstyles/natural-hair', 'PagesController@naturalhair');
 Route::get('/marketing/hairstyles/synthetic-hair', 'PagesController@synthetichair');
 Route::get('/marketing/hairstyles/coloured-hair', 'PagesController@colouredhair');
 Route::get('/posts/show', 'PostsController@show');
+Route::get('/search/{req}', 'QueriesController@search');
 
 Route::get('/subscribe', 'SubscriptionController@index');
 Route::post('/subscribe', 'SubscriptionController@store');

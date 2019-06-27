@@ -26,32 +26,24 @@
     <!--================Contact Area =================-->
     <section class="contact_area section_gap">
       <div class="container">
-        <div
-          id="mapBox"
-          class="mapBox"
-          data-lat="40.701083"
-          data-lon="-74.1522848"
-          data-zoom="13"
-          data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
-          data-mlat="40.701083"
-          data-mlon="-74.1522848"
-        ></div>
+        
         <div class="row">
           <div class="col-lg-3">
             <div class="contact_info">
               <div class="info_item">
                 <i class="ti-home"></i>
                 <h6>Lagos, Nigeria</h6>
-                <p>Ajah, Blah street</p>
+                <p>Barbeach Bus-stop<br>Victoria Island</p>
+                
               </div>
               <div class="info_item">
                 <i class="ti-headphone"></i>
-                <h6><a href="#">+234 8123 456 7890</a></h6>
+                <h6><a href="#">+234 901 528 3598</a></h6>
                 <p>Mon to Fri 9am to 6 pm</p>
               </div>
               <div class="info_item">
                 <i class="ti-email"></i>
-                <h6><a href="#">support@customersway.net</a></h6>
+                <h6><a href="mailto:customersway145@gmail.com">Customersway145@gmail.com</a></h6>
                 <p>Send us your query anytime!</p>
               </div>
             </div>
