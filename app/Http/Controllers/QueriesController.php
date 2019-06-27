@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Image;
+use App\Video;
 use Illuminate\Http\Request;
 
 class QueriesController extends Controller

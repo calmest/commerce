@@ -92,4 +92,11 @@ class ProductsController extends Controller
             return redirect()->back()->with('flash_message_success', 'Category deleted Successfully!');
         }
     }
+
+    public function search(Request $request, $req)
+    {
+        $product = Product::all();
+
+        return $req;
+    }
 }
