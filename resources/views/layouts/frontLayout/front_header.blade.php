@@ -3,11 +3,10 @@
       <div class="main_menu">
         <div class="search_input" id="search_input_box">
           <div class="container">
-            <form class="d-flex justify-content-between" method="" action="">
+            <form class="d-flex justify-content-between" >
               <input
                 type="text"
                 class="form-control"
-                id="search_input"
                 placeholder="Search Here"
               />
               <button type="submit" class="btn"></button>
@@ -19,6 +18,8 @@
             </form>
           </div>
         </div>
+
+
 
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="container">

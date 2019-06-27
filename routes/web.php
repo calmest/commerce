@@ -26,6 +26,9 @@ Route::get('/marketing/{id}', 'PagesController@getCategory');
 Route::get('/marketing/hairstyles/natural-hair', 'PagesController@naturalhair');
 Route::get('/marketing/hairstyles/synthetic-hair', 'PagesController@synthetichair');
 Route::get('/marketing/hairstyles/coloured-hair', 'PagesController@colouredhair');
+
+//query....
+Route::get('/search/{req}', 'QueriesController@search');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
