@@ -49,9 +49,11 @@
             </div>
           </div>
           <div class="col-lg-9">
+
+          
             <form
               class="row contact_form"
-              action="contact_process.php"
+              action=""
               method="post"
               id="contactForm"
               novalidate="novalidate"
@@ -121,3 +123,9 @@
     <!--================Contact Area =================-->
 
 @endsection ('content')
+
+section('script')
+
+
+
+endsection('script')
