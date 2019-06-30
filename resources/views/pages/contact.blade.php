@@ -123,9 +123,3 @@
     <!--================Contact Area =================-->
 
 @endsection ('content')
-
-section('script')
-
-
-
-endsection('script')
