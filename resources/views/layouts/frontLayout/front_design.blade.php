@@ -58,6 +58,11 @@
     <script src="{{ url('https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE') }}"></script>
     <script src="{{ asset('js/frontend_js/gmaps.min.js') }}"></script>
     <script src="{{ asset('js/frontend_js/theme.js') }}"></script>
+    <script>
+      $("body").on("contextmenu", "img", function(e) {
+        return false;
+      });
+    </script>
     @yield('script')
 
 

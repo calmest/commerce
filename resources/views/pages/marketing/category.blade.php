@@ -10,10 +10,6 @@
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
 
-<<<<<<< HEAD
-    </style>
-=======
-<style>
     /* Outer */
     .popup {
         width:100%;
@@ -33,7 +29,6 @@
         background: #fdcf62 !important;
         border: none !important;
     }
->>>>>>> c79196f629cc6890dc845f1b7c107f67151776d6
 
 
     /* Inner */
@@ -117,13 +112,10 @@
 
 <!--================ Start Content Area =================-->
     <section class="blog_area section_gap">
-        <div class="container"  style="margin: 0px !important; padding: 0px !important">
-            <div class="row" style="margin: 0px !important; padding: 0px !important">
+        <div class="container">
+            <div class="row">
                 <div class="col-lg-4">
                     <div class="blog_right_sidebar">
-
-
-
                         <aside class="single_sidebar_widget post_category_widget">
                                 <h4 class="widget_title">{{$category->name}}</h4>
                                 <ul class="list cat-list">
@@ -137,79 +129,25 @@
                                         </a>
                                     </li>
                                     @endforeach
-
-
                                 </ul>
                                 <div class="br"></div>
                             </aside>
 
-                        <aside class="single_sidebar_widget ads_widget">
-                            <a href="#"><img class="/img-fluid" src="/img/blog/add.jpg" alt=""></a>
-                            <div class="br"></div>
-                        </aside>
+                            <aside class="single_sidebar_widget ads_widget">
+                                <a href="#"><img class="/img-fluid" src="/img/blog/add.jpg" alt=""></a>
+                                <div class="br"></div>
+                            </aside>
+                            <aside class="single_sidebar_widget ads_widget">
+                                <a href="#"><img class="/img-fluid" src="/img/blog/add.jpg" alt=""></a>
+                                <div class="br"></div>
+                            </aside>
 
-<<<<<<< HEAD
-                        <aside class="single_sidebar_widget ads_widget">
-                            <a href="#"><img class="/img-fluid" src="/img/blog/add.jpg" alt=""></a>
-                            <div class="br"></div>
-                        </aside>
-
-                        <aside class="single_sidebar_widget ads_widget">
-                            <a href="#"><img class="/img-fluid" src="/img/blog/add.jpg" alt=""></a>
-                            <div class="br"></div>
-                        </aside>
-
-                        <aside class="single-sidebar-widget newsletter_widget">
-                            <h4 class="widget_title">Join Our Newsletter</h4>
-                            <p>
-                                Here, I focus on a range of items and features that we use in life without
-                                giving them a second thought.
-                            </p>
-                            <div class="form-group d-flex flex-row">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text"><i class="ti-email" aria-hidden="true"></i></div>
-                                    </div>
-                                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter email"
-                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email'">
-                                </div>
-                                <a href="#" class="bbtns">Subcribe</a>
-                            </div>
-                            <p class="text-bottom">You can unsubscribe at any time</p>
-                        </aside>
-=======
                         
->>>>>>> c79196f629cc6890dc845f1b7c107f67151776d6
                     </div>
                 </div>
                 <div class="col-lg-8">
 
                     <div class="single-sidebar-widget blog_left_sidebar">
-<<<<<<< HEAD
-                        <h4 class="widget_title">{{$category->name}}</h4><br>
-                            <div class="row">
-                                <h2 class="widget_title">Images</h2>
-                            </div>
-                            <div class="row">
-                                @foreach($images as $key => $img)
-                                <div class="col-lg-3 col-md-3">
-                                    <h5>{{$img->image_title}}</h5>
-                                    <img  src="/storage/products/{{$img->image}}" width="200px" height="200px" class="hover-shadow" alt="">
-                                </div>
-                                
-                                @endforeach
-                            </div>
-                            <br>
-                        <div class="row">
-                            <h2 class="widget_title">Video</h2>
-                        </div>
-                        <div class="row">
-                            @foreach($videos as $key => $vid)
-                            <div class="col-lg-4 col-md-4">
-                                <h5>{{$vid->video_title}}</h5>
-                                <video controls>
-                                    <source src="/storage/products/{{ $vid->video }}" width="200px" height="200px" type="video/mp4">
-=======
                         <h4 class="widget_title">{{$category->name}}</h4>
                         <div class="btn-group">
                             <div class="btn btn-primary" id="toggleImages">Images</div>
@@ -219,21 +157,15 @@
                         <div class="row" id="viewImages">
                             
                             @foreach($images as $key => $img)
-                            <div class="col-lg-6 col-md-6" data-popup-open="popup-{{$img->id}}">
-                                <img src="/storage/products/{{$img->image}}" class="img-thumbnail" alt="">
+                            <div class="col-lg-3 col-md-3" data-popup-open="popup-{{$img->id}}">
+                                <img src="/storage/products/{{$img->image}}" class="img-thumbnail hover-shadow" alt="customers way images" width="300px" height="250px">
                             </div>
                            
-
-
                             <div class="popup" data-popup="popup-{{$img->id}}">
                             <div class="popup-inner">
-                                <h2>{{$img->image_title}}</h2>
-                                <img src="/storage/products/{{$img->image}}" class="img-thumbnail img-responsive reduces" alt="">
-                                <p>
-                                    {{$img->description}}
-                                </p>
-                                
-                                
+                                <h2>{{$img->image_title}}</h2><hr>
+                                <img src="/storage/products/{{$img->image}}" class="img-thumbnail img-responsive reduces" alt="customers way images" width="100%"><hr>
+                                <p>{{$img->description}}</p>
                                 <a class="popup-close" data-popup-close="popup-{{$img->id}}" href="#">x</a>
                             </div>
                         </div>
@@ -245,33 +177,28 @@
                         <div class="row" id="viewVideos" style="display: none;">
                             @guest('user')
                             <p class="alert alert-primary" >Please Login to view videos</p>
-
                             @endguest
-                              @auth('user')
-                            @foreach($videos as $key => $vid)
-                            <div class="col-lg-6 col-md-6" >
-                                <video controls  class="img-fluid">
-                                    <source src="/storage/products/{{ $vid->video }}" width="100px" height="100px" type="video/mp4">
-                                 
->>>>>>> c79196f629cc6890dc845f1b7c107f67151776d6
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
 
-                            <!-- <div class="popup" data-popup="popup-{{$img->id}}">
-                                <div class="popup-inner">
-                                    <h2>{{$vid->video_title}}</h2>
-                                 
-                                    <p>
-                                        {{$vid->description}}
-                                    </p>
-                                    
-                                    
-                                    <a class="popup-close" data-popup-close="popup-{{$vid->id}}" href="#">x</a>
+                            @auth('user')
+                                @foreach($videos as $key => $vid)
+                                    <div class="col-lg-4 col-md-4" >
+                                        <video controls  class="img-fluid">
+                                            <source src="/storage/products/{{ $vid->video }}" width="100px" height="100px" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+
+                                    <!-- <div class="popup" data-popup="popup-{{$img->id}}">
+                                        <div class="popup-inner">
+                                            <h2>{{$vid->video_title}}</h2>
+                                            <p>
+                                                {{$vid->description}}
+                                            </p>
+                                            <a class="popup-close" data-popup-close="popup-{{$vid->id}}" href="#">x</a>
+                                        </div>
+                                    </div> -->
+                                @endforeach
                                 </div>
-                            </div> -->
-                            @endforeach
-                            </div>
                           @endauth
                           
 
@@ -289,60 +216,7 @@
     </script> -->
     <!--================ End Content Area =================-->
 
-<<<<<<< HEAD
-    
-
-<!--<script>
-        // Open the Modal
-        function openModal() {
-            document.getElementById("myModal").style.display = "block";
-        }
-
-        // Close the Modal
-        function closeModal() {
-            document.getElementById("myModal").style.display = "none";
-        }
-
-        var slideIndex = 1;
-        showSlides(slideIndex);
-
-        // Next/previous controls
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        // Thumbnail image controls
-        function currentSlide(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("demo");
-            var captionText = document.getElementById("caption");
-            if (n > slides.length) {slideIndex = 1}
-                if (n < 1) {slideIndex = slides.length}
-                    for (i = 0; i < slides.length; i++) {
-                        slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " active";
-            captionText.innerHTML = dots[slideIndex-1].alt;
-        }
-    </script> -->
-
-@endsection ('content')
-=======
-
-
-
-
-
-@endsection 
+@endsection('content')
 
 @section('script')
 <script type="text/javascript">
@@ -388,5 +262,4 @@ $(document).ready(function() {
    
 });
 </script>
-@endsection
->>>>>>> c79196f629cc6890dc845f1b7c107f67151776d6
+@endsection('script')

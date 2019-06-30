@@ -11,7 +11,8 @@ class QueriesController extends Controller
     public function search(Request $request, $req)
     {
     	$image = Image::where('image_title', 'like', '%' . $req . '%')
-    			->orWhere('description', 'like', '%' . $req . '%')->get();
+                ->orWhere('description', 'like', '%' . $req . '%')->get();
+                
     	$video =  Video::where('video_title', 'like', '%' . $req . '%')
     			->orWhere('description', 'like', '%' . $req . '%')->get();
 
