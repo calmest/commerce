@@ -65,8 +65,15 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h2 class="card-title">Hello Username, Welcome to Customers Way</h2>
+                @auth('user')
+                    <h2 class="card-title">Hello 
+                    <?php
+                        $usern = Auth::user()->name;
+                        echo($usern);
+                    ?>,
+                     Welcome to Customers Way</h2>
                     <p>A platform where users can register and subscribe ,the registered users can upload their videos online and make money through downloads of Subscribers.</p>
+                @endauth
                 </div>
             </div>
         </div>

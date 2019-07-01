@@ -11,7 +11,7 @@ Route::get('/dashboard', function () {
     return view('admin.dashboard');
 })->name('dashboard');
 
-
+Auth::routes(['verify' => true]);
 
 // Route::get('/admin/dashboard', 'AdminController@dashboard');
 Route::get('/settings', 'AdminController@settings');
@@ -51,15 +51,11 @@ Route::match(['get','post'], '/edit-post/{id}', 'PostsController@update');
 Route::match(['get','post'], '/delete-post/{id}', 'PostsController@destroy');
 ;
 
-
-
 Route::get('/view-products', 'ProductsController@viewProducts');
 Route::get('/view-files', 'ProductsController@viewFiles');
 
-
 Route::match(['get','post'], '/edit-product/{id}', 'ProductsController@editProduct');
 Route::match(['get','post'], '/delete-product/{id}', 'ProductsController@deleteProduct');
-
 
 // user
 Route::get('/manage-users', 'AdminController@Users');

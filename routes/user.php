@@ -11,7 +11,7 @@ Route::get('/dashboard', function () {
     return view('user.dashboard');
 })->name('dashboard');
 
-
+//Auth::routes(['verify' => true]);
 
 // Route::get('/user/dashboard', 'UserController@dashboard');
 Route::get('/settings', 'UserController@settings');
