@@ -18,7 +18,7 @@ Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/terms', 'PagesController@terms');
 Route::get('/blog', 'PostsController@index');
-Route::get('/contact', 'PagesController@contact');
+//Route::get('/contact', 'PagesController@contact');
 Route::get('/marketing', 'PagesController@marketing');
 Route::get('/marketing/hairstyles', 'PagesController@hairstyles');
 Route::get('/marketing/clothstyles', 'PagesController@clothstyles');
@@ -28,6 +28,9 @@ Route::get('/marketing/{id}', 'PagesController@getCategory');
 Route::get('/marketing/hairstyles/natural-hair', 'PagesController@naturalhair');
 Route::get('/marketing/hairstyles/synthetic-hair', 'PagesController@synthetichair');
 Route::get('/marketing/hairstyles/coloured-hair', 'PagesController@colouredhair');
+Route::get('contact', 'ContactController@create')->name('contact.create');
+Route::post('contact', 'ContactController@store')->name('contact.store');
+//Mail::to(config('mail.support.address'))->send(new ContactEmail($contact));
 
 //query....
 Route::get('/search/{req}', 'QueriesController@search');

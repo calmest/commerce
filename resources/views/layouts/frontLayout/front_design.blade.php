@@ -29,6 +29,7 @@
 
   <body>
     <!--================ Start Header Menu Area =================-->
+    @include('flash::message')
     @include('layouts.frontLayout.front_header')
     <!--================ End Header Menu Area =================-->
 
@@ -62,6 +63,9 @@
       $("body").on("contextmenu", "img", function(e) {
         return false;
       });
+    </script>
+    <script>
+        $('#flash-overlay-modal').modal();
     </script>
     @yield('script')
 
