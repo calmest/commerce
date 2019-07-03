@@ -34,7 +34,7 @@ Route::post('contact', 'ContactController@store')->name('contact.store');
 
 //query....
 Route::get('/search/{req}', 'QueriesController@search');
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 

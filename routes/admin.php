@@ -9,9 +9,9 @@ Route::get('/dashboard', function () {
     //dd($users);
 
     return view('admin.dashboard');
-})->name('dashboard');
+})->name('dashboard')->middleware('verified');
 
-Auth::routes(['verify' => true]);
+//Auth::routes(['verify' => true]);
 
 // Route::get('/admin/dashboard', 'AdminController@dashboard');
 Route::get('/settings', 'AdminController@settings');

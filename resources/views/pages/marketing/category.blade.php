@@ -171,6 +171,7 @@
                         </div>
 
                             @endforeach
+                            {{ $posts->links() }}
                         </div>
             
                       
@@ -198,6 +199,7 @@
                                         </div>
                                     </div> -->
                                 @endforeach
+                                {{ $posts->links() }}
                                 </div>
                           @endauth
                           
