@@ -115,7 +115,7 @@
                             <div class="br"></div>
                         </aside>
                         
-                        @foreach(\App\Ads::latest()->take(2)->get() as $ads => $ad)
+                        @foreach(\App\Ads::latest()->take(4)->get() as $ads => $ad)
                             <aside class="single_sidebar_widget ads_widget">
                                 <a href="{{ $ad->url }}"><img class="/img-fluid" src="/storage/products/{{ $ad->image }}" alt="" width="300" height="300"></a>
                                 <div class="br"></div>

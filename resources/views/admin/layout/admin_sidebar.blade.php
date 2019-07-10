@@ -19,18 +19,18 @@
                     <ul aria-expanded="false" class="collapse  first-level">
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Post categories </span></a>
                         <ul aria-expanded="false" class="collapse  first-level">
-                            <li class="sidebar-item"><a href="{{ url('/admin/posts/category/create') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> add post category </span></a></li>
-                            <li class="sidebar-item"><a href="{{ url('/admin/posts/category') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> view post categories </span></a></li>
+                            <li class="sidebar-item"><a href="{{ url('/admin/posts/add-category') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> add post category </span></a></li>
+                            <li class="sidebar-item"><a href="{{ url('/admin/posts/view-categories') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> view post categories </span></a></li>
                         </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Post tags </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="{{ url('/admin/posts/tag/create') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> add post tag </span></a></li>
-                                <li class="sidebar-item"><a href="{{ url('/admin/posts/tag') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> view post tags </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('/admin/posts/add-tag') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> add post tag </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('/admin/posts/view-tags') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> view post tags </span></a></li>
                             </ul>
                         </li>
                         <li class="sidebar-item"><a href="{{ url('/admin/posts/create') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Post </span></a></li>
-                        <li class="sidebar-item"><a href="{{ url('/admin/view-posts') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> View Posts </span></a></li>
+                        <li class="sidebar-item"><a href="{{ url('/admin/posts') }}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> View Posts </span></a></li>
                     </ul>
                 </li>
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Images </span></a>
