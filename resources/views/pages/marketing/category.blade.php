@@ -20,6 +20,7 @@
         left:0px;
         background:rgba(0,0,0,0.75);
         z-index: 1000;
+
     }
     .btn-primary{
         background: #002347 !important;
@@ -34,8 +35,9 @@
     /* Inner */
     .popup-inner {
         max-width:600px;
+        height: 80%;
         width:90%;
-        padding:20px;
+        padding:10px;
         position:absolute;
         top:50%;
         left:50%;
@@ -44,6 +46,7 @@
         box-shadow:0px 2px 6px rgba(0,0,0,1);
         border-radius:3px;
         background:#fff;
+        overflow: scroll;
     }
 
     /* Close Button */
@@ -132,15 +135,13 @@
                                 </ul>
                                 <div class="br"></div>
                             </aside>
-
+                            @foreach(\App\Ads::latest()->take(3)->get() as $ads => $ad)
                             <aside class="single_sidebar_widget ads_widget">
-                                <a href="#"><img class="/img-fluid" src="/img/blog/add.jpg" alt=""></a>
+                                <a href="{{ $ad->url }}"><img class="/img-fluid" src="/storage/products/{{ $ad->image }}" alt="" width="300" height="300"></a>
                                 <div class="br"></div>
                             </aside>
-                            <aside class="single_sidebar_widget ads_widget">
-                                <a href="#"><img class="/img-fluid" src="/img/blog/add.jpg" alt=""></a>
-                                <div class="br"></div>
-                            </aside>
+                            @endforeach
+                            
 
                         
                     </div>
@@ -163,15 +164,24 @@
                            
                             <div class="popup" data-popup="popup-{{$img->id}}">
                             <div class="popup-inner">
-                                <h2>{{$img->image_title}}</h2><hr>
-                                <img src="/storage/products/{{$img->image}}" class="img-thumbnail img-responsive reduces" alt="customers way images" width="100%"><hr>
-                                <p>{{$img->description}}</p>
-                                <a class="popup-close" data-popup-close="popup-{{$img->id}}" href="#">x</a>
+                                <h2>{{$img->image_title}}</h2>
+                                <hr>
+                                <img id="image_to_download" src="/storage/products/{{$img->image}}" class="img-thumbnail img-responsive reduces" alt="">
+                                <hr>
+                                <p>
+                                    {{$img->description}}
+                                </p>
+
+                                <!-- <button id="image_handler" class="btn btn-info btn-block">Download</button> -->
+                                <a class="btn btn-info btn-block" href="/storage/products/{{$img->image}}" download="{{$img->image_title}}.jpg">Download </a>
+                                <button data-popup-close="popup-{{$img->id}}" class="btn btn-danger btn-block">Close</button>
+                                
+                                
                             </div>
                         </div>
 
                             @endforeach
-                            {{ $posts->links() }}
+                            
                         </div>
             
                       
@@ -199,7 +209,7 @@
                                         </div>
                                     </div> -->
                                 @endforeach
-                                {{ $posts->links() }}
+                                
                                 </div>
                           @endauth
                           
@@ -226,7 +236,7 @@ $(document).ready(function() {
      $('[data-popup-open]').on('click', function(e) {
         var targeted_popup_class = jQuery(this).attr('data-popup-open');
         $('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
-        console.log('test passed')
+    
         e.preventDefault();
     });
 
@@ -260,6 +270,14 @@ $(document).ready(function() {
        $("#viewVideos").fadeIn('400');
        
     });
+
+    // $('#image_handler').click(function(event) {
+    //     const image = $('#image_to_download').attr('src');
+    //     // var blob = new Blob(image, {type: "image"});
+    //     // FileSaver.saveAs(blob, "iamge.png")
+    //     // // image.download = 'image.png';
+    //     console.log(image);
+    // });
 
    
 });

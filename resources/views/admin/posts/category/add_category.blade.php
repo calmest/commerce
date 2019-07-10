@@ -8,20 +8,20 @@
 <div class="page-breadcrumb">
     <div class="row">
         <div class="col-12 d-flex no-block align-items-center">
-            <h4 class="page-title">Videos</h4>
+            <h4 class="page-title">Post Categories</h4>
             <div class="ml-auto text-right">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
-                        <li class="breadcrumb-item">Videos</li>
-                        <li class="breadcrumb-item active" aria-current="page">Add Video</li>
+                        <li class="breadcrumb-item">Posts</li>
+                        <li class="breadcrumb-item">Post Categories</li>
+                        <li class="breadcrumb-item active" aria-current="page">Add Post Category</li>
                     </ol>
                 </nav>
             </div>
         </div>
     </div>
 </div>
-
 <!-- ============================================================== -->
 <!-- End Bread crumb and right sidebar toggle -->
 <!-- ============================================================== -->
@@ -47,63 +47,37 @@
                     <strong>{!! session('flash_message_success') !!}</strong>
             </div>
         @endif
-        <form class="form-horizontal" method="POST" action="{{ url('/admin/add-video') }}" novalidate="novalidate" id="add_Product" name="add_Product" enctype='multipart/form-data'>
+        <form class="form-horizontal" method="POST" action="{{ url('/admin/posts/add-category') }}" novalidate="novalidate" id="add_post_category" name="add_post_category" enctype='multipart/form-data'>
             {{ csrf_field() }}
             <div class="card-body">
-                <h4 class="card-title">Add Video</h4>
+                <h4 class="card-title">Add Post Category</h4>
                 <hr>
-                <br>
-                
-                
+                <small>Fields marked with <span style="color: red;">*</span> are required.</small>
+                <br><br>
                 <div class="form-group row">
-                    <label class="col-md-3 m-t-15">Select Category</label>
-                    <div class="col-md-9">
-                        <select class="select2 form-control custom-select" style="width: 100%; height:36px;" name="category_id">
-                            <option>Select</option>
-
-                            @foreach ($category as $item)
-                             <option value="{{$item->id}}">{{$item->name}}</option>
-                            @endforeach
-                            
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label class="col-md-3 m-t-15">Video Title</label>
-                    <div class="col-md-9">
-                        <input type="text" class="form-control" name="title" placeholder="Natural Hair...">
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                        <label class="col-md-3">Video Upload</label>
-                        <div class="col-md-9">
-                            <div class="custom-file">
-                                <input type="file" name="video" class="custom-file-input" id="validatedCustomFile" required>
-                                <label class="custom-file-label" for="validatedCustomFile">Choose Video...</label>
-                                <div class="invalid-feedback">Example invalid custom file feedback</div>
-                            </div>
-                        </div>
-                    </div>
-                   
-
-
-                <div class="form-group row">
-                    <label for="description" class="col-lg-3 col-md-3 col-sm-3 control-label col-form-label">Description</label>
+                    <label for="name" class="col-lg-3 col-md-3 col-sm-3 control-label col-form-label">Post Category Title <span style="color: red;">*</span></label>
                     <div class="col-lg-9 col-md-9 col-sm-9">
-                        <textarea type="text" class="form-control" id="description" name="description" placeholder="Description" rows="5"></textarea>
+                        <input type="text" class="form-control" id="post_category_title" name="post_category_title" placeholder="Title..." required>
+                        <span id="chkPwd"></span>
                     </div>
                 </div>
+                <div class="form-group row">
+                    <label for="name" class="col-lg-3 col-md-3 col-sm-3 control-label col-form-label">Post Category Slug</label>
+                    <div class="col-lg-9 col-md-9 col-sm-9">
+                        <input type="text" class="form-control" id="post_category_slug" name="post_category_slug" placeholder="Slug...">
+                        <span id="chkPwd"></span>
+                    </div>
+                </div>
+                
+                <!-- <small>fields marked with <span style="color: red;">*</span> are required.</small> -->
             </div>
+            
             <div class="border-top">
                 <div class="card-body">
-                        <input type="submit" value="Add Video" class="btn btn-success">
+                        <input type="submit" value="Add Post Category" class="btn btn-success">
                 </div>
             </div>
         </form>
-
-        
     </div>
     <!-- ============================================================== -->
     <!-- End PAge Content -->

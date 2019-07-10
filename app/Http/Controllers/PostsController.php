@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\PostCategory;
+use App\Tag;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Post;
+use App\Product;
 use Auth;
 use DB;
 
@@ -46,7 +50,9 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        $postcat = PostCategory::all();
+        $tag = Tag::all();
+        return view('admin.posts.add_post')->with(compact('postcat', 'tag'));
     }
 
     /**
@@ -60,7 +66,10 @@ class PostsController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'body' => 'required',
-            
+            'category' => 'required',
+            'slug' => 'required',
+            'subtitle' => 'required',
+            'tag' => 'required',
             'cover_image' => 'image|nullable|max:1999'
         ]);
 
@@ -83,13 +92,16 @@ class PostsController extends Controller
         // Create Post
         $post = new Post;
         $post->title = $request->input('title');
-        
+        $post->subtitle = $request->input('subtitle');
+        $post->slug = $request->input('slug');
+        //$post->category = $request->input('category');
+        //$post->tag = $request->input('tag');
         $post->body = $request->input('body');
         $post->user_id = auth()->user()->id;
         $post->cover_image = $fileNameToStore;
         $post->save();
 
-        return redirect('/posts')->with('success', 'Post Created');
+        return redirect('/posts/create')->with('success', 'Post Created Successfully');
     }
 
     /**

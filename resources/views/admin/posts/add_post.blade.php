@@ -46,52 +46,91 @@
                     <strong>{!! session('flash_message_success') !!}</strong>
             </div>
         @endif
-        <!-- {!! Form::open(['action' => '/admin/add-post', 'class' => 'form-horizontal', 'novalidate' => 'novalidate', 'id' => 'add_post', 'name' => 'add_post', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!} -->
-        <form class="form-horizontal" method="POST" action="{{ url('/admin/add-post') }}" novalidate="novalidate" id="add_post" name="add_post" enctype='multipart/form-data'>
+        <form class="form-horizontal" method="POST" action="PostsController@store" novalidate="novalidate" id="add_post" name="add_post" enctype='multipart/form-data'>
             {{ csrf_field() }}
         
             <div class="card-body">
                 <h4 class="card-title">Add Post</h4>
                 <hr>
                 <br>
-                <div class="form-group">
-                    <label class="col-md-3 m-t-15">Title</label>
-                    <div class="col-md-9">
-                        <input type="text" class="form-control" name="title" placeholder="Title..." autofocus>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-3">Cover Image</label>
-                    <div class="col-md-9">
-                        <div class="custom-file">
-                            <input type="file" name="cover_image" class="custom-file-input" id="validatedCustomFile" required>
-                            <label class="custom-file-label" for="validatedCustomFile">Choose image...</label>
-                            <div class="invalid-feedback">Example invalid custom file feedback</div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="form-group row">
+                            <label class="col-md-3 m-t-15">Post Title</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="title" placeholder="Title..." autofocus>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-3 m-t-15">Post Sub Title</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="subtitle" placeholder="Sub Title..." autofocus>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-3 m-t-15">Post Slug</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="title" placeholder="Slug..." autofocus>
+                            </div>
                         </div>
                     </div>
-                    
-                </div>
-                <div class="form-group">
-                    <label class="col-md-3 m-t-15">Category</label>
-                    <div class="col-md-9">
-                        <input type="text" class="form-control" name="category" placeholder="Category...">
+                    <div class="col-lg-6 col-md-6">
+
+                        <div class="form-group row">
+                            <label class="col-md-3 m-t-15">Post Category</label>
+                            <div class="col-md-9">
+                                <select class="select2 form-control custom-select" style="width: 100%; height:36px;" name="postcat_id">
+                                    <option>Select</option>
+                                    @foreach ($postcat as $item)
+                                        <option value="{{$item->id}}">{{$item->title}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-3 m-t-15">Post Tag</label>
+                            <div class="col-md-9">
+                                <select class="select2 form-control custom-select" style="width: 100%; height:36px;" name="tag_id">
+                                    <option>Select</option>
+                                    @foreach ($tag as $item)
+                                        <option value="{{$item->id}}">{{$item->title}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-3">Cover Image</label>
+                            <div class="col-md-9">
+                                <div class="custom-file">
+                                    <input type="file" name="cover_image" class="custom-file-input" id="validatedCustomFile" required>
+                                    <label class="custom-file-label" for="validatedCustomFile">Choose image...</label>
+                                    <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="description" class="col-lg-3 col-md-3 col-sm-3 control-label col-form-label">Body</label>
-                    <div class="col-lg-9 col-md-9 col-sm-9">
+
+                <div class="form-group row">
+                    <input type="checkbox">
+                </div>
+                
+                <div class="form-group row">
+                    <label for="description" class="col-lg-12 col-md-12 control-label col-form-label">Post Body</label>
+                    <div class="col-lg-12 col-md-12">
                         <textarea type="text" class="form-control" id="article-ckeditor" name="body" placeholder="Body Text..." rows="5"></textarea>
                     </div>
                 </div>
-                <div class="border-top">
+                <div class="border-top row">
                     <div class="card-body">
                             <input type="submit" value="Add Post" class="btn btn-success">
                     </div>
                 </div>
-                
-                
-        
-        <!-- {!! Form::close() !!} -->
 </form>
         
     </div>

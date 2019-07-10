@@ -96,34 +96,10 @@
                             </div><!-- /input-group -->
                             <div class="br"></div>
                         </aside>
-                        <aside class="single_sidebar_widget ads_widget">
-                            <a href="#"><img class="img-fluid" src="img/blog/add.jpg" alt=""></a>
-                            <div class="br"></div>
-                        </aside>
-                        <aside class="single_sidebar_widget popular_post_widget">
-                            <h3 class="widget_title">Recent Posts</h3>
-                            <div class="media post_item">
-                                <img src="img/blog/popular-post/post1.jpg" alt="post">
-                                <div class="media-body">
-                                    <a href="blog-details.html">
-                                        <h3>Space The Final Frontier</h3>
-                                    </a>
-                                    <p>02 Hours ago</p>
-                                </div>
-                            </div>
-                            
-                            <div class="br"></div>
-                        </aside>
-                        <aside class="single_sidebar_widget ads_widget">
-                            <a href="#"><img class="img-fluid" src="img/blog/add.jpg" alt=""></a>
-                            <div class="br"></div>
-                        </aside>
-                        
                         <aside class="single-sidebar-widget newsletter_widget">
-                            <h4 class="widget_title">Newsletter</h4>
+                            <h4 class="widget_title">Join Our Newsletter</h4>
                             <p>
-                                Here, I focus on a range of items and features that we use in life without
-                                giving them a second thought.
+                                Join our newsletter to get our monthly updates on new promotional offers.
                             </p>
                             <div class="form-group d-flex flex-row">
                                 <div class="input-group">
@@ -138,21 +114,31 @@
                             <p class="text-bottom">You can unsubscribe at any time</p>
                             <div class="br"></div>
                         </aside>
+                        
+                        @foreach(\App\Ads::latest()->take(2)->get() as $ads => $ad)
+                            <aside class="single_sidebar_widget ads_widget">
+                                <a href="{{ $ad->url }}"><img class="/img-fluid" src="/storage/products/{{ $ad->image }}" alt="" width="300" height="300"></a>
+                                <div class="br"></div>
+                            </aside>
+                        @endforeach
+                        <aside class="single_sidebar_widget popular_post_widget">
+                            <h3 class="widget_title">Recent Posts</h3>
+                            <div class="media post_item">
+                                <img src="img/blog/popular-post/post1.jpg" alt="post">
+                                <div class="media-body">
+                                    <a href="blog-details.html">
+                                        <h3>Space The Final Frontier</h3>
+                                    </a>
+                                    <p>02 Hours ago</p>
+                                </div>
+                            </div>
+                            
+                            <div class="br"></div>
+                        </aside>
                         <aside class="single-sidebar-widget tag_cloud_widget">
                             <h4 class="widget_title">Post Categories</h4>
                             <ul class="list">
                                 <li><a href="#">Technology</a></li>
-                                <li><a href="#">Fashion</a></li>
-                                <li><a href="#">Architecture</a></li>
-                                <li><a href="#">Fashion</a></li>
-                                <li><a href="#">Food</a></li>
-                                <li><a href="#">Technology</a></li>
-                                <li><a href="#">Lifestyle</a></li>
-                                <li><a href="#">Art</a></li>
-                                <li><a href="#">Adventure</a></li>
-                                <li><a href="#">Food</a></li>
-                                <li><a href="#">Lifestyle</a></li>
-                                <li><a href="#">Adventure</a></li>
                             </ul>
                         </aside>
                     </div>

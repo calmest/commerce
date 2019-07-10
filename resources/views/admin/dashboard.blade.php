@@ -123,6 +123,26 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Ads</h3>
+                    <p>Create engaging ads that your users and guests might like.</p>
+                    <a href="{{ url('/admin/add-ad') }}"> <button type="button" class="btn btn-outline-success">Add an Add</button> </a>
+                    <a href="{{ url('/admin/view-ads') }}"> <button type="button" class="btn btn-outline-warning">View Ads</button> </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Users</h3>
+                    <p>Manage all your users from one spot on your account.</p>
+                    <a href="{{ url('/admin/manage-users') }}"> <button type="button" class="btn btn-outline-success">Manage Users</button> </a>
+                
+                </div>
+            </div>
+        </div>
 
         
         

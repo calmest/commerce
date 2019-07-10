@@ -54,7 +54,8 @@
     <script src="{{ asset('js/frontend_js/owl-carousel-thumb.min.js') }}"></script>
     <script src="{{ asset('js/frontend_js/jquery.ajaxchimp.min.js') }}"></script>
     <script src="{{ asset('js/frontend_js/mail-script.js') }}"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+    
     <!--gmaps Js-->
     <script src="{{ url('https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE') }}"></script>
     <script src="{{ asset('js/frontend_js/gmaps.min.js') }}"></script>

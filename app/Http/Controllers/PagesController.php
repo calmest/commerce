@@ -64,8 +64,8 @@ class PagesController extends Controller
     public function getCategory($id)
     {
        $category = Category::find($id);
-       $images = Image::where('category_id', '=', $id)->get()->paginate(12);
-       $videos = Video::where('category_id', '=', $id)->get()->paginate(6);
+       $images = Image::where('category_id', '=', $id)->get();
+       $videos = Video::where('category_id', '=', $id)->get();
        $data = ['category' => $category, 'images' => $images, 'videos' => $videos];
         
        return view('pages.marketing.category',compact('category','images','videos','data'));

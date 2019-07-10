@@ -8,13 +8,13 @@
 <div class="page-breadcrumb">
     <div class="row">
         <div class="col-12 d-flex no-block align-items-center">
-            <h4 class="page-title">Posts</h4>
+            <h4 class="page-title">Ads</h4>
             <div class="ml-auto text-right">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
-                        <li class="breadcrumb-item">Posts</li>
-                        <li class="breadcrumb-item active" aria-current="page">View Posts</li>
+                        <li class="breadcrumb-item">Ads</li>
+                        <li class="breadcrumb-item active" aria-current="page">View Ads</li>
                     </ol>
                 </nav>
             </div>
@@ -51,31 +51,31 @@
                         <div class="card">
 
                             <div class="card-body">
-                                <h5 class="card-title">View Posts</h5>
+                                <h5 class="card-title">View Ads</h5>
                                 <hr>
                                 <br>
                                 <div class="table-responsive">
                                     <table id="zero_config" class="table table-striped table-bordered">
                                         <thead>
                                             <tr>
-                                                <th><strong>Post ID</strong></th>
-                                                <th><strong>Post Title</strong></th>
-                                                <th><strong>Post Body</strong></th>
+                                                <th><strong>Ad ID</strong></th>
+                                                <th><strong>Ad Name</strong></th>
+                                                <th><strong>Ad Image</strong></th>
+                                                <th><strong>Ad URL</strong></th>
                                                 <th><strong>Actions</strong></th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($posts as $post)
+                                            @foreach ($ads as $ad)
                                             <tr>
-                                                <td>{{ $post->id }}</td>
-                                                <td>{{ $post->title }}</td>
-                                                <td>{{ $post->body }}</td>
-                                                
+                                                <td>{{ $ad->id }}</td>
+                                                <td>{{ $ad->name }}</td>
+                                                <td><img src="/storage/products/{{ $ad->image }}" width="100px" height="100px" alt=""></td>
+                                                <td>{{ $ad->url }}</td>
                                                 <td>
 
-                                                    <a href="admin/posts/{{ $post->id }}/edit" class="btn btn-cyan btn-sm">Edit</a>
-                                                    <a id="delCat" href="{{ url('/admin/delete-post/'.$post->id) }}" class="btn btn-danger btn-sm">Delete</a>
-                                                    
+                                                    <a href="{{ url('/admin/edit-ad/'.$ad->id) }}" class="btn btn-cyan btn-sm">Edit</a>
+                                                    <a id="delCat" href="{{ url('/admin/delete-ad/'.$ad->id) }}" class="btn btn-danger btn-sm">Delete</a>
 
                                                 </td>
                                             </tr>
@@ -83,9 +83,10 @@
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <th><strong>Post ID</strong></th>
-                                                <th><strong>Post Title</strong></th>
-                                                <th><strong>Post Body</strong></th>
+                                                <th><strong>Ad ID</strong></th>
+                                                <th><strong>Ad Name</strong></th>
+                                                <th><strong>Ad Image</strong></th>
+                                                <th><strong>Ad URL</strong></th>
                                                 <th><strong>Actions</strong></th>
                                             </tr>
                                         </tfoot>

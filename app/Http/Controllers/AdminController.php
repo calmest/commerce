@@ -96,13 +96,6 @@ class AdminController extends Controller
     # code...
     }
 
-    public function addPost()
-    {
-        //$category = Category::all();
-        return view('admin.posts.add_post');
-    # code...
-    }
-
     public function ManageImages()
     {
         // $id = Auth::user()->id;
@@ -115,13 +108,6 @@ class AdminController extends Controller
         // $id = Auth::user()->id;
         $videos = Video::all();
         return view('admin.videos.manage_videos', compact('videos'));
-    }
-
-    public function ManagePosts()
-    {
-        // $id = Auth::user()->id;
-        $posts = Post::all();
-        return view('admin.posts.view_posts', compact('posts'));
     }
 
 
